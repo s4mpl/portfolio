@@ -1,31 +1,31 @@
-import Link from 'next/link'
-import fs from 'fs'
+import { getProjects } from "../../components/utils";
 
-const Home = ({slugs}) => {
+const Index = ({projects}) => {
   return (
-    <div>
-      projects:
-      {slugs.map(slug => {
+    <>
+      <div>
+      projects list
+      {projects.map(project => {
         return (
-          <div key={slug}>
-            <Link href={'projects/' + slug}>
-              {slug}
-            </Link>
+          <div key={project.slug}>
+            <a href={'projects/' + project.slug}>
+              {project.slug}
+            </a>
           </div>
         );
       })}
-    </div>
+      </div>
+    </>
   );
 };
 
-export const getStaticProps = async() => {
-  const files = fs.readdirSync('assets/projects');
-
-  return {
+export const getStaticProps = async () => {
+  return { 
     props: {
-      slugs: files.map(filename => filename.replace('.md', ''))
+      projects: getProjects()
     }
-  };
+  }
 };
 
-export default Home;
+
+export default Index;

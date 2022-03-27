@@ -1,53 +1,40 @@
 import React from 'react';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import Head from 'next/head';
+import { getProjectFromSlug, getProjects } from '../../components/utils';
 
-const Project = ({contents, data}) => {
+const Project = ({project}) => {
   return (
     <>
+      <Head>
+        <title>{project.data.title}</title>
+        <meta title='description' content={project.data.description} />
+      </Head>
       <div>
-        <title>{data.title}</title>
-        <meta title='description' content={data.description}/>
-        <div>i love 2D women</div>
-        <pre>
-          code<br></br>
-          {data.description}
-        </pre>
+        i love 2D women: {project.contents}
       </div>
-      <div>
-        {contents}
-      </div>
-    </>
+    </> 
   );
 };
 
-export const getStaticPaths = async() => {
-  const files = fs.readdirSync('assets/projects');
-
-  console.log(files);
-  const paths = files.map(fileName => ({
+export const getStaticPaths = async () => {
+  const projects = getProjects();
+  //console.log(projects);
+  const paths = projects.map(project => ({
     params: {
-      slug: fileName.replace('.md', '')
+      slug: project.slug
     }
   }));
-
-  console.log(paths);
-
+  
   return {
     paths,
     fallback: false
   };
 };
 
-export const getStaticProps = async({params: {slug}}) => {
-  const markdownWithMetadata = fs.readFileSync(path.join('assets', 'projects', slug + '.md')).toString();
-  const parsedMarkdown = matter(markdownWithMetadata);
-
-  return {
+export const getStaticProps = async ({params: {slug}}) => {
+  return { 
     props: {
-      contents: parsedMarkdown.content,
-      data: parsedMarkdown.data
+      project: getProjectFromSlug(slug),
     }
   }
 };

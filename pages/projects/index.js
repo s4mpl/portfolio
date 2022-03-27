@@ -24,7 +24,7 @@ export const getStaticProps = async () => {
     props: {
       projects: getProjects()
     }
-  }
+  };
 };
 
 

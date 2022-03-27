@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 
-const About = ({data}) => {
+const About = ({contents}) => {
   return (
     <>
       <div>
@@ -9,16 +10,19 @@ const About = ({data}) => {
         i am swag (i am Brandan Roachell)
       </div>
       <div>
-        {data}
+        {contents}
       </div>
     </>
   );
 };
 
 export const getStaticProps = async () => {
+  const data = fs.readFileSync(path.join('assets', 'about.md')).toString();
+  const markdown = matter(data);
+
   return {
     props: {
-      data: fs.readFileSync(path.join('assets', 'about.md')).toString()
+      contents: markdown.content
     }
   };
 };

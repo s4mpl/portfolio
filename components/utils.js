@@ -21,8 +21,8 @@ export const getProjectFromSlug = (slug) => {
   return getProjects().find(project => {
     return project.slug == slug;
   });
-}
+};
 
 export const markdown = (data) => {
   return data;
-}
+};

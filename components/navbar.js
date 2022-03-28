@@ -29,7 +29,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className='space-x-8 hidden md:block'>
+        <div className='space-x-12 hidden md:block'>
           <Link href='/about'>
             <a
               className={`text-base  ${
@@ -84,7 +84,7 @@ export default function Navbar() {
           </Link>
         </div>
         
-        <div className='space-x-4 flex flex-row items-center'>
+        <div className='space-x-8 flex flex-row items-center'>
           <a
             href='https://www.linkedin.com/in/brandan-roachell/'
             target='_blank'

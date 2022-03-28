@@ -7,7 +7,7 @@ const Home = () => {
       <Navbar/>
       <div class='mx-10'>
         <p>Hello my name is</p>
-        <p>Brandan Roachell</p>
+        <p class='text-7xl'><b>Brandan Roachell</b></p>
       </div>
     </>
   );

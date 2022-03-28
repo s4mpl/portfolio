@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { getProjects } from '../../components/utils';
 import Navbar from '../../components/navbar';
+import BackButton from '../../components/back-button';
 
 const Index = ({projects}) => {
   return (
     <>
       <Navbar/>
-      <div class='mx-10'>
+      <div className='mx-10'>
         Here are some of my projects:
         {projects.map(project => {
           return (
@@ -20,6 +21,7 @@ const Index = ({projects}) => {
           );
         })}
       </div>
+      <BackButton/>
     </>
   );
 };

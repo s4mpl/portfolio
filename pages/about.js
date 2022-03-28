@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Navbar from '../components/navbar';
+import BackButton from '../components/back-button';
 
 const About = ({contents}) => {
   return (
@@ -13,6 +14,7 @@ const About = ({contents}) => {
         <br></br>
         {contents}
       </div>
+      <BackButton/>
     </>
   );
 };

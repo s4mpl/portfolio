@@ -14,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className='max-w-6xl mx-auto px-4 py-10' style={{fontFamily: "Source Sans Pro"}}>
+    <div className='sticky top-0 z-50 max-w-6xl mx-auto px-4 py-6 bg-white dark:bg-black' style={{fontFamily: "Source Sans Pro"}}>
       <div className='flex md:flex-row justify-between items-center'>
         <div className='flex flex-col'>
           <Link href='/'>
@@ -22,8 +22,8 @@ export default function Navbar() {
               <h1 className='font-semibold text-xl dark:text-gray-100'>
                 Brandan
               </h1>
-              <p className='text-base font-light text-gray-600 dark:text-gray-300'>
-                Software, Robotics, Data Analytics
+              <p className='text-base pr-4 font-light text-gray-600 dark:text-gray-300'>
+                Software, Robotics, Data Science
               </p>
             </a>
           </Link>
@@ -209,8 +209,8 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <Link href='Brandan_Roachell_Resume.pdf' passHref>
-            <a className={`text-base text-gray-600 dark:text-gray-300 font-normal`} target='_blank'>
+          <Link href='/Brandan_Roachell_Resume.pdf'>
+            <a className={`text-base text-gray-600 dark:text-gray-300 font-normal`}>
               Resume
             </a>
           </Link>

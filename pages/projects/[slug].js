@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { getProjectFromSlug, getProjects } from '../../components/utils';
 import Navbar from '../../components/navbar';
+import BackButton from '../../components/back-button';
 
 const Project = ({project}) => {
   return (
@@ -11,12 +12,12 @@ const Project = ({project}) => {
         <meta title='description' content={project.data.description}/>
       </Head>
       <Navbar/>
-      <div class="relative w-full px-6 py-12 bg-white shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl lg:pt-16 lg:pb-28">
-        <div class='prose prose-slate'>
+      <div class="relative w-full px-6 py-12 bg-slate-100 dark:bg-gray-800 shadow-xl shadow-slate-700/10 dark:shadow-gray-500/10 ring-1 ring-gray-900/5 dark:ring-slate-50/5 md:max-w-3xl md:mx-auto lg:max-w-4xl lg:pt-16 lg:pb-28">
+        <div class='prose prose-slate dark:prose-invert'>
           <p class='lead'>i love 2D women</p>
           <p>but i love <code>ryze</code> even more</p>
           <blockquote>
-            One step ahead of cataclysm...
+            "One step ahead of cataclysm..."
           </blockquote>
           <code><span class='code-highlight bg-code-highlight'>test</span></code>
           <p>See the following snippet:</p>
@@ -26,7 +27,7 @@ const Project = ({project}) => {
           <p>See the following snippet again:</p>
         </div>
         <br></br>
-        <div class='prose prose-slate mx-auto'>
+        <div class='prose prose-slate dark:prose-invert mx-auto'>
           <pre><code class='language-cpp'>
             {project.contents}
           </code></pre>
@@ -37,7 +38,7 @@ const Project = ({project}) => {
           </figure>
         </div>
         <br></br>
-        <div class='prose prose-slate'>
+        <div class='prose prose-slate dark:prose-invert'>
           <h3>meet me in US310 for the following reasons:</h3>
           <ul>
             <li>forgot your password</li>
@@ -45,6 +46,7 @@ const Project = ({project}) => {
           </ul>
         </div>
       </div>
+      <BackButton/>
     </> 
   );
 };

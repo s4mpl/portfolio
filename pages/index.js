@@ -6,8 +6,8 @@ const Home = () => {
     <>
       <Navbar/>
       <div class='mx-10'>
-        <p>Hello my name is</p>
-        <p class='text-7xl'><b>Brandan Roachell</b></p>
+        <p>Hello, my name is</p>
+        <p class='text-5xl sm:text-7xl'>Brandan Roachell</p>
       </div>
     </>
   );

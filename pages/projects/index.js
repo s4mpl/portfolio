@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getProjects } from '../../components/utils';
 import Navbar from '../../components/navbar';
 
@@ -6,13 +7,15 @@ const Index = ({projects}) => {
     <>
       <Navbar/>
       <div class='mx-10'>
-        projects list
+        Here are some of my projects:
         {projects.map(project => {
           return (
             <div key={project.slug}>
-              <a href={'projects/' + project.slug}>
-                {project.slug}
-              </a>
+              <Link href={'projects/' + project.slug}>
+                <a>
+                  {project.slug}
+                </a>
+              </Link>
             </div>
           );
         })}

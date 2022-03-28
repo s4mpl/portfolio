@@ -82,6 +82,11 @@ export default function Navbar() {
               )}
             </a>
           </Link>
+          <Link href='Brandan_Roachell_Resume.pdf' passHref>
+            <a className={`text-base text-gray-600 dark:text-gray-300 font-normal`} target='_blank'>
+              Resume
+            </a>
+          </Link>
         </div>
         
         <div className='space-x-8 flex flex-row items-center'>
@@ -202,6 +207,11 @@ export default function Navbar() {
                   />
                 </svg>
               )}
+            </a>
+          </Link>
+          <Link href='Brandan_Roachell_Resume.pdf' passHref>
+            <a className={`text-base text-gray-600 dark:text-gray-300 font-normal`} target='_blank'>
+              Resume
             </a>
           </Link>
       </div>

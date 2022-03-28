@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className='space-x-12 hidden md:block'>
           <Link href='/about'>
             <a
-              className={`text-base  ${
+              className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
                 router.asPath === '/about'
                   ? 'text-gray-800 font-bold dark:text-gray-200'
                   : 'text-gray-600 dark:text-gray-300 font-normal '
@@ -58,7 +58,7 @@ export default function Navbar() {
           </Link>
           <Link href='/projects'>
             <a
-              className={`text-base  ${
+              className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
                 router.asPath === '/projects'
                   ? 'text-gray-800 font-bold dark:text-gray-200'
                   : 'text-gray-600 dark:text-gray-300 font-normal '
@@ -82,18 +82,16 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <Link href='Brandan_Roachell_Resume.pdf' passHref>
-            <a className={`text-base text-gray-600 dark:text-gray-300 font-normal`} target='_blank'>
-              Resume
-            </a>
-          </Link>
+          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank'>
+            Resume
+          </a>
         </div>
         
         <div className='space-x-8 flex flex-row items-center'>
           <a
             href='https://www.linkedin.com/in/brandan-roachell/'
             target='_blank'
-            className='text-base font-normal text-gray-600 dark:text-gray-300'
+            className='text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-gray-100'
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -109,7 +107,7 @@ export default function Navbar() {
           <a
             href='https://github.com/s4mpl/'
             target='_blank'
-            className='text-base font-normal text-gray-600 dark:text-gray-300'
+            className='text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-gray-100'
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -134,7 +132,7 @@ export default function Navbar() {
                 viewBox='0 0 24 24'
                 fill='currentColor'
                 stroke='currentColor'
-                className='w-4 h-4 text-yellow-500 dark:text-yellow-500'
+                className='w-4 h-4 text-yellow-500 dark:text-yellow-500 hover:text-yellow-700 hover:dark:text-yellow-300'
               >
                 {theme === 'dark' ? (
                   <path
@@ -159,7 +157,7 @@ export default function Navbar() {
       <div className='space-x-8 block md:hidden mt-4'>
         <Link href='/about'>
           <a
-            className={`text-base  ${
+            className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
               router.asPath === '/about'
                 ? 'text-gray-800 font-bold dark:text-gray-200'
                 : 'text-gray-600 dark:text-gray-300 font-normal '
@@ -185,7 +183,7 @@ export default function Navbar() {
         </Link>
         <Link href='/projects'>
             <a
-              className={`text-base  ${
+              className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
                 router.asPath === '/projects'
                   ? 'text-gray-800 font-bold dark:text-gray-200'
                   : 'text-gray-600 dark:text-gray-300 font-normal '
@@ -209,11 +207,9 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <Link href='/Brandan_Roachell_Resume.pdf'>
-            <a className={`text-base text-gray-600 dark:text-gray-300 font-normal`}>
-              Resume
-            </a>
-          </Link>
+          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank'>
+            Resume
+          </a>
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
 import Link from 'next/link'
+import Navbar from '../components/navbar';
 
 const Home = () => {
   return (
     <>
-      <div>
-        <Link href='about'>about me</Link><br></br>
-        <Link href='projects'>all projects</Link>
+      <Navbar/>
+      <div class='mx-10'>
+        <p>Hello my name is</p>
+        <p>Brandan Roachell</p>
       </div>
     </>
   );

@@ -1,15 +1,16 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import Navbar from '../components/navbar';
 
 const About = ({contents}) => {
   return (
     <>
-      <div>
+      <Navbar/>
+      <div class='mx-10'>
         <h1>about me:</h1>
         i am swag (i am Brandan Roachell)
-      </div>
-      <div>
+        <br></br>
         {contents}
       </div>
     </>

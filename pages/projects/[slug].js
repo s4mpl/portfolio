@@ -14,6 +14,7 @@ const Project = ({project}) => {
         <title>{project.data.title}</title>
         <meta title='description' content={project.data.description}/>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+        <script>hljs.highlightAll()</script>
       </Head>
       <Navbar/>
       <BackgroundContainer>
@@ -77,12 +78,6 @@ const Project = ({project}) => {
         </Post>
       </BackgroundContainer>
       <BackButton/>
-
-      {
-        useEffect(() => {
-          hljs.highlightAll();
-        }, [])
-      }
     </>
   );
 };

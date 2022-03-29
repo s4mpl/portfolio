@@ -30,6 +30,12 @@ module.exports = {
               'margin-bottom': '1.5em',
               'border-top-width': '2px',
             },
+            a: {
+              'text-decoration-line': 'none',
+              '&:hover': {
+                'text-decoration-line': 'underline',
+              },
+            },
           },
         },
       },

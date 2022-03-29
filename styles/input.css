@@ -6,9 +6,34 @@
   @import 'fonts.css'
 }
 
+@layer base {
+  html {
+    @apply selection:bg-slate-800 selection:text-slate-100;
+  }
+  html.dark {
+    @apply selection:bg-slate-100 selection:text-slate-800;
+  }
+}
+
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
   content: "";
 }
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
   content: "";
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  color: var(--tw-prose-code);
+  background-color: var(--tw-prose-quote-borders);
+  overflow-x: auto;
+  font-weight: 400;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+  border-radius: 0.375rem;
+  padding-top: 0.8571429em;
+  padding-right: 1.1428571em;
+  padding-bottom: 0.8571429em;
+  padding-left: 1.1428571em;
 }

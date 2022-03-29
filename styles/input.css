@@ -23,8 +23,6 @@
 }
 
 .prose :where(pre):not(:where([class~="not-prose"] *)) {
-  color: var(--tw-prose-code);
-  background-color: var(--tw-prose-quote-borders);
   overflow-x: auto;
   font-weight: 400;
   font-size: 0.875em;

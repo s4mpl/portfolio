@@ -23,6 +23,7 @@ export const getProjectFromSlug = (slug) => {
   });
 };
 
-export const markdown = (data) => {
-  return data;
+export const mdToHTML = (data) => {
+  //const hljs = require('highlight.js/lib/common');
+  //return hljs.highlightAuto(data).value
 };

@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import '../styles/output.css'
+import '../styles/code-dark.css'
 import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }) {

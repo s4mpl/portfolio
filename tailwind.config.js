@@ -21,6 +21,7 @@ module.exports = {
               'border-radius': '0.25rem',
               'padding': '0.125rem 0.1875rem',
               'background-color': 'var(--tw-prose-quote-borders)',
+              'font-weight': 'normal',
             },
             h1: {
               'margin-bottom': '0',

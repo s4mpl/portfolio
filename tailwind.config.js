@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         sans: ['"Inter var"', '"Source Sans Pro"', '"Roboto Mono"', 'Inter', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        htmldark: '#121212',
+      },
     },
   },
   plugins: [

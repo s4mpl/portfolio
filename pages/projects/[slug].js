@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { getProjectFromSlug, getProjects } from '../../components/utils';
 import Navbar from '../../components/navbar';
 import BackButton from '../../components/back-button';
+import BackgroundContainer from '../../components/background-container';
+import Post from '../../components/post';
 
 const Project = ({project}) => {
   return (
@@ -12,12 +14,17 @@ const Project = ({project}) => {
         <meta title='description' content={project.data.description}/>
       </Head>
       <Navbar/>
-      <div class="relative w-full px-6 py-12 bg-slate-100 dark:bg-gray-800 shadow-xl shadow-slate-700/10 dark:shadow-gray-500/10 ring-1 ring-gray-900/5 dark:ring-slate-50/5 md:max-w-3xl md:mx-auto lg:max-w-4xl lg:pt-16 lg:pb-28">
-        <div class='prose prose-slate dark:prose-invert'>
-          <p class='lead'>i love 2D women</p>
+      <BackgroundContainer>
+        <Post>
+          <i class='lead'>i love 2D women</i>
           <p>but i love <code>ryze</code> even more</p>
           <blockquote>
-            "One step ahead of cataclysm..."
+            "One step ahead of cataclysm..."<br></br>
+            "In carnage, I bloom&mdash;like a flower in the dawn..."
+            <blockquote>
+              "Power slam!"
+            </blockquote>
+            "It's not how much time you have&mdash;it's how you use it..."
           </blockquote>
           <code><span class='code-highlight bg-code-highlight'>test</span></code>
           <p>See the following snippet:</p>
@@ -25,9 +32,6 @@ const Project = ({project}) => {
             {project.contents}
           </code></pre>
           <p>See the following snippet again:</p>
-        </div>
-        <br></br>
-        <div class='prose prose-slate dark:prose-invert mx-auto'>
           <pre><code class='language-cpp'>
             {project.contents}
           </code></pre>
@@ -36,16 +40,14 @@ const Project = ({project}) => {
             <img src='/images/boeing-stock.png' alt='' class='h-32 w-full hover:invert'/>
             <figcaption>Figure 1: the tragedy of 09/11/2001</figcaption>
           </figure>
-        </div>
-        <br></br>
-        <div class='prose prose-slate dark:prose-invert'>
+          if i put some really long text heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeere then it behaves like this
           <h3>meet me in US310 for the following reasons:</h3>
           <ul>
             <li>forgot your password</li>
             <li>50 instead of 65</li>
           </ul>
-        </div>
-      </div>
+        </Post>
+      </BackgroundContainer>
       <BackButton/>
     </> 
   );

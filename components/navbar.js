@@ -14,8 +14,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className='sticky top-0 z-50 max-w-6xl mx-auto px-4 py-6 bg-white dark:bg-htmldark' style={{fontFamily: "Source Sans Pro"}}>
-      <div className='flex md:flex-row justify-between items-center'>
+    <div className='sticky top-0 z-50 mx-auto px-4 py-6 bg-white dark:bg-htmldark' style={{fontFamily: "Source Sans Pro"}}>
+      <div className='flex md:flex-row justify-around items-center'>
         <div className='flex flex-col'>
           <Link href='/'>
             <a>

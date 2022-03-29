@@ -16,7 +16,7 @@ const Home = () => {
           <div>
             <p class='pb-8 sm:pb-4'>Hello! My name is</p>
             <p class='text-5xl sm:text-7xl'>Brandan Roachell</p>
-            <p class='pt-8 pb-8 pl-2 sm:pl-4 sm:pt-4 sm:pb-4'>
+            <p class='py-8 pl-2 sm:pl-4 sm:py-4'>
               I'm a computer science and math student with a passion for learning and making cool things.
             </p>
           </div>

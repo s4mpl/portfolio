@@ -16,6 +16,9 @@ const Project = ({project}) => {
       <Navbar/>
       <BackgroundContainer>
         <Post>
+          <h1 class='text-center'>{project.data.title}</h1>
+          <p class='text-center lead text-xs'><i>Written {project.data.written}; Last edited {project.data.edited}</i></p>
+          <hr></hr>
           <i class='lead'>i love 2D women</i>
           <p>but i love <code>ryze</code> even more</p>
           <blockquote>

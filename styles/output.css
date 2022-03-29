@@ -552,9 +552,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .prose :where(hr):not(:where([class~="not-prose"] *)) {
   border-color: var(--tw-prose-hr);
-  border-top-width: 1px;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-top-width: 2px;
 }
 
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
@@ -584,6 +584,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
+  margin-bottom: 0;
 }
 
 .prose :where(h1 strong):not(:where([class~="not-prose"] *)) {
@@ -646,7 +647,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.875em;
   border-radius: 0.25rem;
   padding: 0.125rem 0.1875rem;
-  background-color: rgb(125 211 252/.25);
+  background-color: var(--tw-prose-quote-borders);
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
@@ -1026,6 +1027,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -1085,6 +1090,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2.5rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1113,10 +1123,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 2rem;
 }
 
-.pt-8 {
-  padding-top: 2rem;
-}
-
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1133,6 +1139,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 }
 
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1140,6 +1154,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-xl {
@@ -1281,6 +1300,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 640px) {
+  .sm\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .sm\:pt-48 {
     padding-top: 12rem;
   }
@@ -1291,10 +1315,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:pl-4 {
     padding-left: 1rem;
-  }
-
-  .sm\:pt-4 {
-    padding-top: 1rem;
   }
 
   .sm\:pt-24 {
@@ -1312,11 +1332,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 768px) {
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .md\:block {
     display: block;
   }
@@ -1325,25 +1340,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
-  .md\:max-w-3xl {
-    max-width: 48rem;
-  }
-
   .md\:flex-row {
     flex-direction: row;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:max-w-4xl {
-    max-width: 56rem;
-  }
-
-  .lg\:pt-16 {
-    padding-top: 4rem;
-  }
-
-  .lg\:pb-28 {
-    padding-bottom: 7rem;
   }
 }

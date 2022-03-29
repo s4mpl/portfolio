@@ -644,6 +644,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--tw-prose-code);
   font-weight: 600;
   font-size: 0.875em;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.1875rem;
+  background-color: rgb(125 211 252/.25);
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
@@ -1183,6 +1186,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .invert {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+  content: "";
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: "";
 }
 
 .hover\:text-gray-900:hover {

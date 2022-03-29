@@ -26,11 +26,12 @@ const Project = ({project}) => {
             </blockquote>
             "It's not how much time you have&mdash;it's how you use it..."
           </blockquote>
-          <code><span class='code-highlight bg-code-highlight'>test</span></code>
+          <p>Hahaha&mdash;what the?! <code>{'./pages/**/*.{html,js}'}</code></p>
           <p>See the following snippet:</p>
           <pre><code class='language-cpp'>
             {project.contents}
           </code></pre>
+          <hr></hr>
           <p>See the following snippet again:</p>
           <pre><code class='language-cpp'>
             {project.contents}

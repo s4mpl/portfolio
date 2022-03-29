@@ -24,6 +24,5 @@ export const getProjectFromSlug = (slug) => {
 };
 
 export const mdToHTML = (data) => {
-  //const hljs = require('highlight.js/lib/common');
-  //return hljs.highlightAuto(data).value
+  return (data);
 };

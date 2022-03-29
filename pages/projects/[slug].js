@@ -5,6 +5,7 @@ import Navbar from '../../components/navbar';
 import BackButton from '../../components/back-button';
 import BackgroundContainer from '../../components/background-container';
 import Post from '../../components/post';
+import { useEffect } from 'react';
 
 const Project = ({project}) => {
   return (
@@ -12,7 +13,7 @@ const Project = ({project}) => {
       <Head>
         <title>{project.data.title}</title>
         <meta title='description' content={project.data.description}/>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
       </Head>
       <Navbar/>
       <BackgroundContainer>
@@ -20,7 +21,8 @@ const Project = ({project}) => {
           <h1 class='text-center'>{project.data.title}</h1>
           <p class='text-center lead text-xs'><i>Written {project.data.written}; Last edited {project.data.edited}</i></p>
           <hr></hr>
-          <i class='lead'>i love 2D women</i>
+          {/*mdToHTML(project.contents)*/}
+          <i class='lead'>i love robots</i>
           <p>but i love <code>ryze</code> even more</p>
           <blockquote>
             "A step ahead of cataclysm..."<br></br>
@@ -38,7 +40,7 @@ const Project = ({project}) => {
           </pre>
           <pre>
             test pre only
-             but   it should preserve whitespace
+              but   it should preserve whitespace
           </pre>
           <code>
             {'test code only with\na newline'}
@@ -75,8 +77,13 @@ const Project = ({project}) => {
         </Post>
       </BackgroundContainer>
       <BackButton/>
-      <script>hljs.initHighlightingOnLoad();</script>
-    </> 
+
+      {
+        useEffect(() => {
+          hljs.highlightAll();
+        }, [])
+      }
+    </>
   );
 };
 

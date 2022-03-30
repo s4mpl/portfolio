@@ -18,7 +18,7 @@ const About = ({contents}) => {
       <Navbar/>
       <BackgroundContainer>
         <Post>
-          <div class='mx-10'>
+          <div className='mx-10'>
             <div dangerouslySetInnerHTML={{__html: contents}}></div>
           </div>
         </Post>

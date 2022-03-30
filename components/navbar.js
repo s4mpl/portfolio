@@ -82,7 +82,7 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank'>
+          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank' rel='noreferrer'>
             Resume
           </a>
         </div>
@@ -91,6 +91,7 @@ export default function Navbar() {
           <a
             href='https://www.linkedin.com/in/brandan-roachell/'
             target='_blank'
+            rel='noreferrer'
             className='text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-gray-100'
           >
             <svg
@@ -107,6 +108,7 @@ export default function Navbar() {
           <a
             href='https://github.com/s4mpl/'
             target='_blank'
+            rel='noreferrer'
             className='text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-gray-100'
           >
             <svg
@@ -207,7 +209,7 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank'>
+          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank' rel='noreferrer'>
             Resume
           </a>
       </div>

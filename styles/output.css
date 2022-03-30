@@ -999,14 +999,19 @@ html.dark::selection {
   z-index: 50;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.my-80 {
+  margin-top: 20rem;
+  margin-bottom: 20rem;
 }
 
 .mt-4 {
@@ -1037,6 +1042,10 @@ html.dark::selection {
   display: none;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .h-max {
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -1061,6 +1070,10 @@ html.dark::selection {
 
 .h-4 {
   height: 1rem;
+}
+
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .w-6 {
@@ -1182,6 +1195,11 @@ html.dark::selection {
   padding-right: 1.5rem;
 }
 
+.py-80 {
+  padding-top: 20rem;
+  padding-bottom: 20rem;
+}
+
 .pt-24 {
   padding-top: 6rem;
 }
@@ -1214,8 +1232,24 @@ html.dark::selection {
   padding-bottom: 3rem;
 }
 
+.pt-80 {
+  padding-top: 20rem;
+}
+
+.pb-96 {
+  padding-bottom: 24rem;
+}
+
+.pt-96 {
+  padding-top: 24rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-5xl {
@@ -1236,6 +1270,11 @@ html.dark::selection {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-semibold {

@@ -12,14 +12,14 @@ const Project = ({project}) => {
       <Head>
         <title>{project.data.title}</title>
         <meta title='description' content={project.data.description}/>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+        <script defer src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js'></script>
         <script>hljs.highlightAll()</script>
       </Head>
       <Navbar/>
       <BackgroundContainer>
         <Post>
-          <h1 class='text-center'>{project.data.title}</h1>
-          <p class='text-center lead text-xs'><i>Written {project.data.written}; Last edited {project.data.edited}</i></p>
+          <h1 className='text-center'>{project.data.title}</h1>
+          <p className='text-center lead text-xs'><i>Written {project.data.written}; Last edited {project.data.edited}</i></p>
           <hr></hr>
           <div dangerouslySetInnerHTML={{__html: project.contents}}></div>
         </Post>

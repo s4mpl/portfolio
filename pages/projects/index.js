@@ -17,7 +17,7 @@ const Index = ({projects}) => {
       <BackgroundContainer>
         <Post>
           <div className='mx-10'>
-            <p class='lead'>Here are some of my favorite projects that I've written about:</p>
+            <p className='lead'>Here are some of my favorite projects that I&apos;ve written about:</p>
             {projects.sort(function(a, b) {return b.data.date.localeCompare(a.data.date)}).map(project => {
               return (
                 <div key={project.slug}>

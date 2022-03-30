@@ -6,6 +6,7 @@ import BackButton from '../components/back-button';
 import BackgroundContainer from '../components/background-container';
 import Post from '../components/post';
 import Head from 'next/head';
+import { marked } from 'marked';
 
 const About = ({contents}) => {
   return (
@@ -19,9 +20,7 @@ const About = ({contents}) => {
         <Post>
           <div class='mx-10'>
             <h1>about me:</h1>
-            i am swag (i am Brandan Roachell)
-            <br></br>
-            {contents}
+            <div dangerouslySetInnerHTML={{__html: contents}}></div>
           </div>
         </Post>
       </BackgroundContainer>
@@ -33,10 +32,11 @@ const About = ({contents}) => {
 export const getStaticProps = async () => {
   const data = fs.readFileSync(path.join('assets', 'about.md')).toString();
   const markdown = matter(data);
+  const contents = marked.parse(markdown.content);
 
   return {
     props: {
-      contents: markdown.content
+      contents
     }
   };
 };

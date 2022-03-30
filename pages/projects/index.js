@@ -31,8 +31,8 @@ const Index = ({projects}) => {
             })}
           </div>
         </Post>
+        <BackButton/>
       </BackgroundContainer>
-      <BackButton/>
     </>
   );
 };

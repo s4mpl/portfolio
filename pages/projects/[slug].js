@@ -5,15 +5,19 @@ import Navbar from '../../components/navbar';
 import BackButton from '../../components/back-button';
 import BackgroundContainer from '../../components/background-container';
 import Post from '../../components/post';
+import hljs from 'highlight.js'
+import { useEffect } from 'react';
 
 const Project = ({project}) => {
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
+
   return (
     <>
       <Head>
         <title>{project.data.title}</title>
         <meta title='description' content={project.data.description}/>
-        <script defer src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js'></script>
-        <script>hljs.highlightAll()</script>
       </Head>
       <Navbar/>
       <BackgroundContainer>

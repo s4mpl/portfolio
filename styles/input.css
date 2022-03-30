@@ -8,7 +8,7 @@
 
 @layer base {
   html {
-    @apply selection:bg-slate-800 selection:text-slate-100;
+    @apply selection:bg-[#334155] selection:text-slate-100;
   }
   html.dark {
     @apply selection:bg-slate-100 selection:text-slate-800;

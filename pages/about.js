@@ -19,7 +19,6 @@ const About = ({contents}) => {
       <BackgroundContainer>
         <Post>
           <div class='mx-10'>
-            <h1>about me:</h1>
             <div dangerouslySetInnerHTML={{__html: contents}}></div>
           </div>
         </Post>

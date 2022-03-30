@@ -29,19 +29,50 @@ pre test again
     but   it should preserve whitespace
 ```
 <code>
-  {'test code only with\na newline'}
+  test code only with
+  a newline
 </code>
 
 <p id='again'>See the following snippet:</p>
-<pre><code class='language-cpp'>
-  {project.contents}
-</code></pre>
+
+```cpp
+#include <iostream>
+
+int main(int argc, char *argv[]) {
+
+  /* An annoying "Hello World" example */
+  for (auto i = 0; i < 0xFFFF; i++)
+    cout << "Hello, World!" << endl;
+
+  char c = '\n';
+  unordered_map <string, vector<string> > m;
+  m["key"] = "\\\\"; // this is an error
+
+  return -2e3 + 12l;
+}
+```
 <p>The rest is detailed in my <a href='/projects/another-test#again' target='_blank'>other post</a> about organic chemistry.</p>
-<hr></hr>
+
+---
+
 <p>See the following snippet again (without explicit syntax highlighting):</p>
-<pre><code>
-  {project.contents}
-</code></pre>
+
+```
+#include <iostream>
+
+int main(int argc, char *argv[]) {
+
+  /* An annoying "Hello World" example */
+  for (auto i = 0; i < 0xFFFF; i++)
+    cout << "Hello, World!" << endl;
+
+  char c = '\n';
+  unordered_map <string, vector<string> > m;
+  m["key"] = "\\\\"; // this is an error
+
+  return -2e3 + 12l;
+}
+```
 <p>if i try to put text in here to introduce the figure, it looks like this (not good)</p>
 <figure class='text-center'>
   <img src='/images/boeing-stock.png' alt='' class='h-32 w-full hover:invert'/>

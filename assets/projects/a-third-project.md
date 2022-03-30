@@ -5,6 +5,7 @@ date: "2002/01/30"
 written: "January 30, 2002"
 edited: "January 31, 2002"
 ---
+```cpp
 #include <iostream>
 
 int main(int argc, char *argv[]) {
@@ -19,3 +20,4 @@ int main(int argc, char *argv[]) {
 
   return -2e3 + 12l;
 }
+```

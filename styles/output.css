@@ -1061,16 +1061,6 @@ html.dark::selection {
   height: 1rem;
 }
 
-.h-max {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .w-6 {
   width: 1.5rem;
 }
@@ -1160,9 +1150,9 @@ html.dark::selection {
   padding: 0.75rem;
 }
 
-.py-72 {
-  padding-top: 18rem;
-  padding-bottom: 18rem;
+.py-80 {
+  padding-top: 20rem;
+  padding-bottom: 20rem;
 }
 
 .px-10 {
@@ -1193,11 +1183,6 @@ html.dark::selection {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.py-80 {
-  padding-top: 20rem;
-  padding-bottom: 20rem;
 }
 
 .pt-24 {

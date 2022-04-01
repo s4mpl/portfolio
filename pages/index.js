@@ -10,8 +10,8 @@ const Home = () => {
         <title>Home</title>
         <meta title='description' content='Home page'/>
       </Head>
-      <Navbar/>
-      <BackgroundContainer>
+      <BackgroundContainer style='height: 100vh'>
+        <Navbar/>
         <div className='px-10 pt-24 sm:pt-48'>
           <div>
             <p className='pb-8 sm:pb-4'>Hello! My name is</p>

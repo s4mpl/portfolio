@@ -15,8 +15,8 @@ const About = ({contents}) => {
         <title>About Me</title>
         <meta title='description' content='Some background info about me'/>
       </Head>
-      <Navbar/>
       <BackgroundContainer>
+        <Navbar/>
         <Post>
           <div className='mx-10'>
             <div dangerouslySetInnerHTML={{__html: contents}}></div>

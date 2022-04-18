@@ -22,7 +22,7 @@ const About = ({contents}) => {
             <div dangerouslySetInnerHTML={{__html: contents}}></div>
           </div>
         </Post>
-        <BackButton/>
+        <BackButton href='/'/>
       </BackgroundContainer>
     </>
   );

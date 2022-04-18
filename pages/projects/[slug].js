@@ -27,7 +27,7 @@ const Project = ({project}) => {
           <hr></hr>
           <div dangerouslySetInnerHTML={{__html: project.contents}}></div>
         </Post>
-        <BackButton/>
+        <BackButton href='/projects'/>
       </BackgroundContainer>
     </>
   );

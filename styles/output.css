@@ -454,6 +454,11 @@ html::selection {
   color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
+html {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 237 237 / var(--tw-bg-opacity));
+}
+
 html.dark *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -480,6 +485,11 @@ html.dark::selection {
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+
+html.dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 18 18 / var(--tw-bg-opacity));
 }
 
 *, ::before, ::after {
@@ -1197,12 +1207,8 @@ html.dark::selection {
   padding-left: 0.5rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
-
-.pb-36 {
-  padding-bottom: 9rem;
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .pr-4 {
@@ -1338,9 +1344,9 @@ html.dark::selection {
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
 }
 
-.dark .dark\:bg-htmldark {
+.dark .dark\:bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(18 18 18 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-zinc-800 {
@@ -1403,10 +1409,6 @@ html.dark::selection {
 
   .sm\:pt-24 {
     padding-top: 6rem;
-  }
-
-  .sm\:pb-44 {
-    padding-bottom: 11rem;
   }
 
   .sm\:text-7xl {

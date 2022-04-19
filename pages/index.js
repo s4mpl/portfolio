@@ -10,7 +10,7 @@ const Home = () => {
         <title>Home</title>
         <meta title='description' content='Home page'/>
       </Head>
-      <BackgroundContainer style='height: 100vh'>
+      <BackgroundContainer>
         <Navbar/>
         <div className='px-10 pt-24 sm:pt-48'>
           <div>
@@ -21,7 +21,7 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <p className='pt-20 pb-36 sm:pt-24 sm:pb-44'>
+            <p className='pt-16 sm:pt-24'>
               Contact me:{' '}
               <a className='text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-gray-100' href='mailto:broachel@vols.utk.edu'><u>broachel@vols.utk.edu</u></a>
             </p>

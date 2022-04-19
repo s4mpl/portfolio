@@ -19,8 +19,8 @@ const Project = ({project}) => {
         <title>{project.data.title}</title>
         <meta title='description' content={project.data.description}/>
       </Head>
-      <Navbar/>
       <BackgroundContainer>
+        <Navbar/>
         <Post>
           <h1 className='text-center'>{project.data.title}</h1>
           <p className='text-center lead text-xs'><i>Written {project.data.written}; Last edited {project.data.edited}</i></p>

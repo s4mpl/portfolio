@@ -9,9 +9,11 @@
 @layer base {
   html {
     @apply selection:bg-[#334155] selection:text-slate-100;
+    @apply bg-[#ededed];
   }
   html.dark {
     @apply selection:bg-slate-100 selection:text-slate-800;
+    @apply bg-htmldark
   }
 }
 

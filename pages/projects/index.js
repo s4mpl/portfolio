@@ -13,8 +13,8 @@ const Index = ({projects}) => {
         <title>My Projects</title>
         <meta title='description' content="Some of my favorite projects that I've written about"/>
       </Head>
-      <Navbar/>
       <BackgroundContainer>
+        <Navbar/>
         <Post>
           <div className='mx-10'>
             <p className='lead'>Here are some of my favorite projects that I&apos;ve written about:</p>

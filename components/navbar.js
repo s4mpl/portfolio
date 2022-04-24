@@ -56,16 +56,16 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <Link href='/projects'>
+          <Link href='/posts'>
             <a
               className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
-                router.asPath === '/projects'
+                router.asPath === '/posts'
                   ? 'text-gray-800 font-bold dark:text-gray-200'
                   : 'text-gray-600 dark:text-gray-300 font-normal '
               }`}
             >
-              Projects{' '}
-              {router.asPath === '/projects' && (
+              Posts{' '}
+              {router.asPath === '/posts' && (
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
@@ -183,16 +183,16 @@ export default function Navbar() {
             )}
           </a>
         </Link>
-        <Link href='/projects'>
+        <Link href='/posts'>
             <a
               className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
-                router.asPath === '/projects'
+                router.asPath === '/posts'
                   ? 'text-gray-800 font-bold dark:text-gray-200'
                   : 'text-gray-600 dark:text-gray-300 font-normal '
               }`}
             >
-              Projects{' '}
-              {router.asPath === '/projects' && (
+              Posts{' '}
+              {router.asPath === '/posts' && (
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'

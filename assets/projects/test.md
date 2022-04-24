@@ -1,11 +1,12 @@
 ---
-title: "Awesome"
-description: "foot cheese"
+title: "Awesome Markdown Test"
+description: "captivating description"
 date: "1921/11/09"
 written: "November 9, 1921"
 edited: "February 2, 2014"
 status: "In Progress"
 haslink: false
+link: ""
 ---
 <i class='lead'>i love robots</i>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { getProjectFromSlug, getProjects, mdToHTML } from '../../components/utils';
+import { getProjectFromSlug, getProjects, getPostFromSlug, getPosts } from '../../components/utils';
 import Navbar from '../../components/navbar';
 import BackButton from '../../components/back-button';
 import BackgroundContainer from '../../components/background-container';
@@ -27,15 +27,14 @@ const Project = ({project}) => {
           <hr></hr>
           <div dangerouslySetInnerHTML={{__html: project.contents}}></div>
         </Post>
-        <BackButton href='/projects'/>
+        <BackButton href='/posts'/>
       </BackgroundContainer>
     </>
   );
 };
 
 export const getStaticPaths = async () => {
-  const projects = getProjects();
-  //console.log(projects);
+  const projects = getProjects().concat(getPosts());
   const paths = projects.map(project => ({
     params: {
       slug: project.slug
@@ -51,7 +50,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({params: {slug}}) => {
   return { 
     props: {
-      project: getProjectFromSlug(slug),
+      project: getProjectFromSlug(slug) || getPostFromSlug(slug),
     }
   };
 };

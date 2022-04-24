@@ -22,10 +22,10 @@ const Index = ({projects}) => {
               let classList = ['project-entry'];
               switch(project.data.status) {
                 case 'Complete':
-                  classList.push('bg-green-400 dark:bg-green-700');
+                  classList.push('bg-lime-300 dark:bg-lime-800');
                   break;
                 case 'In Progress':
-                  classList.push('bg-amber-300 dark:bg-yellow-600');
+                  classList.push('bg-amber-300 dark:bg-amber-600');
                   break;
                 case 'Cancelled':
                   classList.push('bg-red-400 dark:bg-red-800');
@@ -34,7 +34,7 @@ const Index = ({projects}) => {
                   classList.push('bg-sky-400 dark:bg-sky-700')
                   break;
                 default:
-                  classList.push('bg-purple-300 dark:bg-purple-800')
+                  classList.push('bg-fuchsia-300 dark:bg-fuchsia-800')
               }
               return (
                 <div key={project.slug} className={classList.join(' ')}>

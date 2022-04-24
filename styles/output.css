@@ -1020,10 +1020,6 @@ h6 {
   float: right;
 }
 
-.float-left {
-  float: left;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1137,10 +1133,6 @@ h6 {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-around {
   justify-content: space-around;
 }
@@ -1161,9 +1153,9 @@ h6 {
   border-radius: 0.25rem;
 }
 
-.bg-green-400 {
+.bg-lime-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(190 242 100 / var(--tw-bg-opacity));
 }
 
 .bg-amber-300 {
@@ -1181,9 +1173,9 @@ h6 {
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
 
-.bg-purple-300 {
+.bg-fuchsia-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(216 180 254 / var(--tw-bg-opacity));
+  background-color: rgb(240 171 252 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1419,14 +1411,14 @@ h6 {
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
 }
 
-.dark .dark\:bg-green-700 {
+.dark .dark\:bg-lime-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-yellow-600 {
+.dark .dark\:bg-amber-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
+  background-color: rgb(146 64 14 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-red-800 {
@@ -1439,9 +1431,9 @@ h6 {
   background-color: rgb(3 105 161 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-purple-800 {
+.dark .dark\:bg-fuchsia-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 33 168 / var(--tw-bg-opacity));
+  background-color: rgb(134 25 143 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-black {
@@ -1452,6 +1444,16 @@ h6 {
 .dark .dark\:bg-zinc-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-amber-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-lime-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 98 18 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-gray-300 {
@@ -1490,14 +1492,6 @@ h6 {
 }
 
 @media (min-width: 640px) {
-  .sm\:float-right {
-    float: right;
-  }
-
-  .sm\:float-left {
-    float: left;
-  }
-
   .sm\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;

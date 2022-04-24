@@ -38,7 +38,7 @@ const Index = ({projects}) => {
               }
               return (
                 <div key={project.slug} className={classList.join(' ')}>
-                  <div>
+                  <div style={{'margin-right': '2rem'}}>
                     <Link href={'projects/' + project.slug}>
                       <a>
                         {project.data.title} ({project.data.date})

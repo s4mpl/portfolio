@@ -726,9 +726,10 @@ h6 {
   font-weight: 600;
   font-size: 0.875em;
   border-radius: 0.25rem;
-  padding: 0.125rem 0.1875rem;
+  padding: 0 0.1875rem;
   background-color: var(--tw-prose-quote-borders);
   font-weight: bold;
+  display: inline-block;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
@@ -1411,14 +1412,14 @@ h6 {
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
 }
 
-.dark .dark\:bg-lime-700 {
+.dark .dark\:bg-lime-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
+  background-color: rgb(63 98 18 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-amber-800 {
+.dark .dark\:bg-amber-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(146 64 14 / var(--tw-bg-opacity));
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-red-800 {
@@ -1444,16 +1445,6 @@ h6 {
 .dark .dark\:bg-zinc-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-amber-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-lime-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 98 18 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-gray-300 {

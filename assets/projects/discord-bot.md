@@ -4,7 +4,7 @@ description: "My own Discord bot with a bunch of random commands and features"
 date: "2017/12/30"
 written: "August 18, 2022"
 edited: "August 19, 2022"
-status: "Complete"
+status: "Completed"
 haslink: false
 link: ""
 ---

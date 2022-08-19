@@ -4,7 +4,7 @@ description: "A Spigot-based Minecraft server plugin that features a global item
 date: "2021/12/12"
 written: "Never"
 edited: "Never"
-status: "Complete"
+status: "Completed"
 haslink: true
 link: "https://github.com/tareqalyousef/DynamicShop"
 ---

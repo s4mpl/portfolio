@@ -21,7 +21,7 @@ const Index = ({projects, posts}) => {
             {projects.sort(function(a, b) {return b.data.date.localeCompare(a.data.date)}).map(project => {
               let classList = ['project-entry'];
               switch(project.data.status) {
-                case 'Complete':
+                case 'Completed':
                   classList.push('bg-lime-300 dark:bg-lime-800');
                   break;
                 case 'In Progress':

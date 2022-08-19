@@ -18,7 +18,7 @@ const About = ({contents}) => {
       <BackgroundContainer>
         <Navbar/>
         <Post>
-          <div className='mx-10'>
+          <div className=''>
             <img style={{margin: '0em 1.5em 0.25em 0em'}} src='/images/me.jpg' className='float-left w-2/5 min-w-[115px]' alt='a picture of me'/>
             <div dangerouslySetInnerHTML={{__html: contents}}></div>
           </div>

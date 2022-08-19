@@ -14,6 +14,7 @@ const About = ({contents}) => {
       <Head>
         <title>About Me</title>
         <meta title='description' content='Some background info about me'/>
+        <base target="_blank"/>
       </Head>
       <BackgroundContainer>
         <Navbar/>

@@ -18,6 +18,7 @@ const Project = ({project}) => {
       <Head>
         <title>{project.data.title}</title>
         <meta title='description' content={project.data.description}/>
+        <base target="_blank"/>
       </Head>
       <BackgroundContainer>
         <Navbar/>

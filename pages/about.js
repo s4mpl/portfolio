@@ -19,7 +19,7 @@ const About = ({contents}) => {
         <Navbar/>
         <Post>
           <div className='mx-10'>
-            <img style={{margin: '0em 1.5em 0.25em 0em'}} src='/images/me.jpg' class='float-left w-2/5 min-w-[115px]'/>
+            <img style={{margin: '0em 1.5em 0.25em 0em'}} src='/images/me.jpg' className='float-left w-2/5 min-w-[115px]' alt='a picture of me'/>
             <div dangerouslySetInnerHTML={{__html: contents}}></div>
           </div>
         </Post>

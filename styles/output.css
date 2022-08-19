@@ -1000,10 +1000,6 @@ h6 {
   --tw-prose-invert-td-borders: #334155;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
 .relative {
   position: relative;
 }
@@ -1103,6 +1099,10 @@ h6 {
   height: 1rem;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1125,62 +1125,6 @@ h6 {
 
 .w-full {
   width: 100%;
-}
-
-.w-2\/5 {
-  width: 40%;
-}
-
-.w-3\/5 {
-  width: 60%;
-}
-
-.min-w-\[50\%\] {
-  min-width: 50%;
-}
-
-.min-w-\[50px\] {
-  min-width: 50px;
-}
-
-.min-w-\[250px\] {
-  min-width: 250px;
-}
-
-.min-w-\[10px\] {
-  min-width: 10px;
-}
-
-.min-w-\[120px\] {
-  min-width: 120px;
-}
-
-.min-w-\[100px\] {
-  min-width: 100px;
-}
-
-.min-w-\[150px\] {
-  min-width: 150px;
-}
-
-.min-w-\[170px\] {
-  min-width: 170px;
-}
-
-.min-w-\[175px\] {
-  min-width: 175px;
-}
-
-.min-w-\[185px\] {
-  min-width: 185px;
-}
-
-.min-w-\[125px\] {
-  min-width: 125px;
-}
-
-.min-w-\[105px\] {
-  min-width: 105px;
 }
 
 .min-w-\[115px\] {
@@ -1575,18 +1519,6 @@ h6 {
 }
 
 @media (min-width: 640px) {
-  .sm\:visible {
-    visibility: visible;
-  }
-
-  .sm\:block {
-    display: block;
-  }
-
-  .sm\:w-2\/5 {
-    width: 40%;
-  }
-
   .sm\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;

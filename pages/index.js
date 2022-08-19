@@ -21,7 +21,7 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <p className='pt-16 sm:pt-24'>
+            <p className='pt-16 pb-8 sm:pt-24 sm:pb-4'>
               Contact me:{' '}
               <a className='text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-gray-100' href='mailto:broachel@vols.utk.edu'><u>broachel@vols.utk.edu</u></a>
             </p>

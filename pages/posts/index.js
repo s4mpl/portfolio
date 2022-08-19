@@ -17,7 +17,7 @@ const Index = ({projects, posts}) => {
         <Navbar/>
         <Post>
           <div className='mx-10'>
-            <p className='lead'>Here are some of my favorite projects that I&apos;ve written about:</p>
+            <p className='lead'>These are some of my favorite personal projects that I&apos;ve written about:</p>
             {projects.sort(function(a, b) {return b.data.date.localeCompare(a.data.date)}).map(project => {
               let classList = ['project-entry'];
               switch(project.data.status) {
@@ -122,6 +122,9 @@ const Index = ({projects, posts}) => {
                 </div>
               );
             })}
+            <hr/>
+            <p className='lead'>I also have some academic publications:</p>
+            <a href='https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=LhyE6zwAAAAJ' target='_blank' rel='noreferrer'>My Google Scholar</a>
           </div>
         </Post>
         <BackButton href='/'/>

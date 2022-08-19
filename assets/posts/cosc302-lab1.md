@@ -8,4 +8,4 @@ status: "TA Notes"
 haslink: false
 link: ""
 ---
-no notes
+fuel

@@ -1,11 +1,9 @@
-## Every business needs a top talent; this is where I come into play.
+<p class='lead'>Hey! I'm Brandan, a fourth-year student graduating from the University of Tennessee, Knoxville in December 2022 with an B.S. in computer science and a minor in math.</p>
 
-<p class='lead'>My name is Josh Tanenbaum and I help people to meet and exceed their goals. What makes me stand out are my solid skills in search engine optimization, calculating website bounce rates, corporate strategies and financial and consumer data assessment, and data and information gaining and analyzation about companies.</p>
+I've worked as both an undergraduate [research assistant](https://globalcomputing.group/) and teaching assistant in UTK's CS department since January 2021, so I've been able to supplement my course learnings with additional experience in problem solving, communication, and collaboration by breaking down and explaining complex concepts to students, creating effective presentations and data visualizations about my work, and being a part of a large variety of teams throughout my academic career.
 
-Along with my technical skills, I am also an articulate and refined communicator, able to build strong working relationships across the full professional spectrum, including team members. I am known for being a strong, engaging professional, who is creative, open minded, enthusiastic, organized, and hands-on.  
+I also have valuable industry experience as a software engineer from my Summer 2022 internship with [Coursera](https://www.coursera.org/), and I specialize in backend development. I contributed high quality code with a strong understanding of what I was building&mdash;I sought to grasp the system as a whole rather than only work within the scope of my project, considered unit testing and logging, and was able to independently utilize available resources for implementing and debugging my solutions with the best practices.
 
-I am committed to superior services through my positive attitude and leadership within fast-paced environment, while also being extremely versatile and adaptable to industrial needs and business trends.  
+In my free time, I serve as vice president and programming lead of UTK's competitive VEX U Robotics team, practice classical piano ([one of my current favorites](https://www.youtube.com/watch?v=cxlf-ZmE8JI)), and play video games.
 
-If you’d like to get in touch, please feel free to connect with me.  
-My email is:  
-josh.tanenbaum1@gmail.com
+If you'd like to get in touch, please feel free to connect with me on LinkedIn and/or email me at **broachel@vols.utk.edu**.

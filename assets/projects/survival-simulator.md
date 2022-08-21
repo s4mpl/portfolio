@@ -217,7 +217,7 @@ void SmartBullet::update(std::set<Entity*>* closeEntities) {
 
 <hr>
 
-This is one of my favorites. I always love a good application of bit manipulation, and what better way to use bits than to simulate a bunch of related bools and save memory? For my weapon upgrade system, each `Weapon` has a class variable `int weaponUpgrades` that I could attribute each bit of (up to 32) to a modification of one of the weapon's stats. When updating the state of the weapon, I could perform checks such as
+This is one of my favorites. I always love a good application of bit manipulation, and what better way to use bits than to act as a bunch of related bools and save memory? For my weapon upgrade system, each `Weapon` has a class variable `int weaponUpgrades` that I could attribute each bit of (up to 32) to a modification of one of the weapon's stats. When updating the state of the weapon, I could perform checks such as
 ###### Pistol.cpp
 ```cpp
 Pistol::Pistol(...) {
@@ -251,7 +251,7 @@ void Pistol::draw(sf::RenderWindow& window) {
     ...
 }
 ```
-to override the default values. This also meant each instance of a weapon could be created with whatever combination of upgrades simply by passing that unique `weaponUpgrades` value.
+to override the default values or run additional code. This also meant each instance of a weapon could be created with whatever combination of upgrades simply by passing that unique `weaponUpgrades` value.
 
 For example: 15 -> 00...01111 -> (from right to left) **yes** increased ammo, **yes** laser sight, **yes** increased fire rate, **yes** increased reload speed, **no** burst fire.
 

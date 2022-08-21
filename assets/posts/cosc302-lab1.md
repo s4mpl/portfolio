@@ -1,11 +1,11 @@
 ---
-title: "COSC 302 Lab 1: Lab Name"
-description: "Helpful notes on Lab 1"
-date: "2022/09/02"
+title: "COSC 302 Lab 1: Fuel"
+description: "Helpful notes for setting up your environment and understanding the lab writeup"
+date: "2022/09/06"
 written: "Never"
 edited: "Never"
 status: "TA Notes"
-haslink: false
-link: ""
+haslink: true
+link: "https://utk.instructure.com/courses/154639/assignments/1283699"
 ---
-fuel
+coming soon?

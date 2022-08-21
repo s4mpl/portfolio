@@ -25,8 +25,8 @@ Once you request and receive an API token, you can start a bot and invite it to 
 Discord4J provided a helpful tutorial on setting up basic functionality in [IntelliJ](https://www.jetbrains.com/idea/). It was surprisingly easy to set up, and, with as little experience as I had, I was able to get an instance of a Discord client configured and running.
 
 <figure class='text-center'>
-  <img src='/images/discord-bot-6.png' class='mx-auto'/>
-  <figcaption>A 4:41 AM celebration of a Discord bot rite of passage.</figcaption>
+  <img src='/images/discord-bot/discord-bot-6.png' class='mx-auto'/>
+  <figcaption>A celebration of a Discord bot rite of passage.</figcaption>
 </figure>
 
 > **Note:** There are a lot of longer code blocks in this post simply because I'm not making the whole project public, so feel free to skip these. They are intended to provide a bit of insight about a bot's inner-workings and show generally what the syntax is like, but it's quite outdated now and honestly boring to read through unless you're genuinely interested.
@@ -50,7 +50,7 @@ static void sendMessage(IChannel channel, String message) {
     RequestBuffer.request(() -> {
         try {
             channel.sendMessage(message);
-        } catch (DiscordException e) {
+        } catch(DiscordException e) {
             System.out.println("Message (" + message + ") from " + channel.getName() + " in " + channel.getGuild().getName() + " could not be sent with error: ");
             e.printStackTrace();
         }
@@ -136,7 +136,7 @@ private void ping(MessageReceivedEvent event) {
 ```
 
 <figure class='text-center'>
-  <img src='/images/discord-bot-1.png' class='mx-auto'/>
+  <img src='/images/discord-bot/discord-bot-1.png' class='mx-auto'/>
   <figcaption>No problem.</figcaption>
 </figure>
 
@@ -221,7 +221,7 @@ You get the idea. Here's the full list commands that were made public:
 * `/google` - Returns the first 1000 characters of a Google search (use with anything you would usually type into Google)
 
 <figure class='text-center'>
-  <img src='/images/discord-bot-2.png' class='mx-auto'/>
+  <img src='/images/discord-bot/discord-bot-2.png' class='mx-auto'/>
   <figcaption></figcaption>
 </figure>
 
@@ -282,7 +282,7 @@ private void goAway(MessageReceivedEvent event) {
 ```
 
 <figure class='text-center'>
-  <img src='/images/discord-bot-7.png' class='mx-auto'/>
+  <img src='/images/discord-bot/discord-bot-7.png' class='mx-auto'/>
   <figcaption></figcaption>
 </figure>
 
@@ -332,7 +332,7 @@ private void colorHex(MessageReceivedEvent event, List<String> args) {
 }
 ```
 <figure class='text-center'>
-  <img src='/images/discord-bot-3.png' class='mx-auto'/>
+  <img src='/images/discord-bot/discord-bot-3.png' class='mx-auto'/>
   <figcaption></figcaption>
 </figure>
 
@@ -384,6 +384,6 @@ public static void play(UserSpeakingEvent event, String searchStr) {
 Now what I had was *nothing* compared to the amazing things people had done at the time. There were already bots that could play music from multiple platforms, scrape web pages and display the information, and even simulate full-on interactive games in chat, and Discord and its dedicated bot developer community continue to invent new ways to use them. However, in the end, it was still a lot of fun to create and was a great learning experience to reflect upon.
 
 <figure class='text-center'>
-  <img src='/images/discord-bot-5.png' class='mx-auto'/>
+  <img src='/images/discord-bot/discord-bot-5.png' class='mx-auto'/>
   <figcaption>s4mple Bot's final message.</figcaption>
 </figure>

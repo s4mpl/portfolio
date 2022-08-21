@@ -17,7 +17,7 @@ const Index = ({projects, posts}) => {
         <Navbar/>
         <Post>
           <div className=''>
-            <p className='lead'>These are some of my favorite personal projects that I&apos;ve written about:</p>
+            <p className='lead'>These are some of my favorite personal projects that I&apos;ve written more about:</p>
             {projects.sort(function(a, b) {return b.data.date.localeCompare(a.data.date)}).map(project => {
               let classList = ['project-entry'];
               switch(project.data.status) {
@@ -43,7 +43,7 @@ const Index = ({projects, posts}) => {
                       <div className='basis-3/4 mr-6'>
                         <Link href={'/posts/' + project.slug}>
                           <a>
-                            {project.data.title} ({project.data.date})
+                            {project.data.title} <span style={{color: 'var(--tw-prose-body)'}}>({project.data.date})</span>
                           </a>
                         </Link>
                       </div>
@@ -70,11 +70,11 @@ const Index = ({projects, posts}) => {
               );
             })}
             <hr/>
-            <p className='lead'>Here are my standalone posts, including notes for my students:</p>
+            <p className='lead'>Here is some other content, including standalone posts, notable class projects, and notes for my students:</p>
             {posts.sort(function(a, b) {return b.data.date.localeCompare(a.data.date)}).map(project => {
               let classList = ['project-entry'];
               switch(project.data.status) {
-                case 'Complete':
+                case 'Completed':
                   classList.push('bg-lime-300 dark:bg-lime-800');
                   break;
                 case 'In Progress':
@@ -96,7 +96,7 @@ const Index = ({projects, posts}) => {
                       <div className='basis-3/4 mr-6'>
                         <Link href={'/posts/' + project.slug}>
                           <a>
-                            {project.data.title} ({project.data.date})
+                            {project.data.title} <span style={{color: 'var(--tw-prose-body)'}}>({project.data.date})</span>
                           </a>
                         </Link>
                       </div>

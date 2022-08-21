@@ -25,7 +25,7 @@ const Project = ({project}) => {
         <Post>
           <h1 className='text-center'>{project.data.title}</h1>
           <p className='text-center lead text-xs'><i>Written {project.data.written}; Last edited {project.data.edited}</i></p>
-          <hr></hr>
+          <hr/>
           <div dangerouslySetInnerHTML={{__html: project.contents}}></div>
         </Post>
         <BackButton href='/posts'/>

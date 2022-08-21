@@ -67,7 +67,7 @@ The biggest problem was the collision handling. It takes a lot to do it right&md
 This was my progress at the end of the first day:
 
 <figure class='text-center'>
-  <video width='500px' height='500px' class='mx-auto' autoplay muted controls>
+  <video width='500px' height='500px' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-7.mp4' type='video/mp4'>
   </video>
   <figcaption>Music to my ears.</figcaption>
@@ -89,7 +89,7 @@ For now though, you can check out the [repository](https://github.com/s4mpl/Surv
 <hr>
 
 
-This is nothing new, but I did find this optimization to be cool. When constantly checking for collisions between every entity, you're left with a horrible O(n^2)-like operation (a [complete graph](https://en.wikipedia.org/wiki/Complete_graph) where each node is an entity and each edge represents a check means `n*(n-1) / 2` checks for `n` entities&mdash;not ideal).
+This is nothing new, but I did find this optimization to be cool. When constantly checking for collisions between every entity, you're left with a horrible O(n^2)-like operation (a [complete graph](https://en.wikipedia.org/wiki/Complete_graph) where each node is an entity and each edge represents a check means *at least* `n*(n-1) / 2` checks for `n` entities&mdash;not ideal).
 
 To reduce the number of checks, we keep track of which entities can *possibly* be close enough to collide by comparing how close their x-positions are. If two entities do not share a close x-position, then they shouldn't be considered at all for the more expensive collision check. It's called the sweep and prune algorithm, and my implementation is pretty questionable so I won't showcase it here, but [this video (again)](https://youtu.be/eED4bSkYCB8?t=941) does a great job illustrating it.
 
@@ -118,7 +118,7 @@ void Player::rotateTo(sf::Vector2i pos) {
 However, that yields something like this:
 
 <figure class='text-center'>
-  <video width='' height='' class='mx-auto' autoplay muted controls>
+  <video width='' height='' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-9.mp4' type='video/mp4'>
   </video>
   <figcaption>Yikes!</figcaption>
@@ -147,7 +147,7 @@ void Player::rotateTo(sf::Vector2i pos) {
 This one is kind of obvious, but I thought it was a detail worth mentioning. The order in which you render each component determines which one will overlap the other, so I had to be mindful of that. Render the HUD elements over everything else by drawing them last:
 
 <figure class='text-center'>
-  <video width='' height='' class='mx-auto' autoplay muted controls>
+  <video width='' height='' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-3.mp4' type='video/mp4'>
   </video>
   <figcaption></figcaption>
@@ -175,7 +175,7 @@ window.display();
 Here is the other weapon I got around to implementing. The name was inspired by the "Smart Pistol" from Titanfall, which automatically locks on to targets in the sights. I wanted to test out homing bullets, which could be used for similar features such as seeking missiles (more on that later) and zombie-like enemies that blindly follow the player but much slower:
 
 <figure class='text-center'>
-  <video width='' height='' class='mx-auto' autoplay muted controls>
+  <video width='' height='' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-2.mp4' type='video/mp4'>
   </video>
   <figcaption></figcaption>
@@ -198,7 +198,7 @@ void SmartBullet::update(std::set<Entity*>* closeEntities) {
 For something heavier like missiles, we can simulate the projectile's weight by updating the *acceleration* vector to the direction of the position vector instead of the velocity directly, giving the illusion of inertia. This also makes the control weaker and more drift-y:
 
 <figure class='text-center'>
-  <video width='' height='' class='mx-auto' autoplay muted controls>
+  <video width='' height='' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-11.mp4' type='video/mp4'>
   </video>
   <figcaption>"Weight" effect increased dramatically.</figcaption>
@@ -256,7 +256,7 @@ to override the default values. This also meant each instance of a weapon could 
 For example: 15 -> 00...01111 -> (from right to left) **yes** increased ammo, **yes** laser sight, **yes** increased fire rate, **yes** increased reload speed, **no** burst fire.
 
 <figure class='text-center'>
-  <video width='' height='' class='mx-auto' autoplay muted controls>
+  <video width='' height='' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-4.mp4' type='video/mp4'>
   </video>
   <figcaption>Burst fire mode.</figcaption>
@@ -345,7 +345,7 @@ if(event.type == sf::Event::MouseWheelScrolled) {
 ```
 
 <figure class='text-center'>
-  <video width='' height='' class='mx-auto' autoplay muted controls>
+  <video width='' height='' class='mx-auto' muted controls>
     <source src='/images/survival-simulator/survival-simulator-1.mp4' type='video/mp4'>
   </video>
   <figcaption>Weapon switching.</figcaption>

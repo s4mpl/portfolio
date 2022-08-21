@@ -62,7 +62,7 @@ sf::Vector2f computeCollision(sf::Vector2f p1, sf::Vector2f p2, sf::Vector2f v1,
 
 When balls bounce off walls or each other, the `elasticity` determines what percent of its speed it will retain after the calculation. It's a bit lazy, but it's essentially the same thing.
 
-The biggest problem was the collision handling. It takes a lot to do it right&mdash;especially when the game is laggy or the objects are tiny&mdash;but I settled for "good enough" for this project since it wasn't serious. I won't put any of it here since it's long and messy.
+The biggest problem was the collision handling. It takes a lot to do it right&mdash;especially when the game is laggy or the objects are tiny&mdash;but I settled for "good enough" for this project since it wasn't serious. I won't put any of my code here since it's long and messy, but [this video](https://youtu.be/eED4bSkYCB8) is a really nice resource to learn more.
 
 This was my progress at the end of the first day:
 
@@ -91,7 +91,7 @@ For now though, you can check out the [repository](https://github.com/s4mpl/Surv
 
 This is nothing new, but I did find this optimization to be cool. When constantly checking for collisions between every entity, you're left with a horrible O(n^2)-like operation (a [complete graph](https://en.wikipedia.org/wiki/Complete_graph) where each node is an entity and each edge represents a check means `n*(n-1) / 2` checks for `n` entities&mdash;not ideal).
 
-To reduce the number of checks, we keep track of which entities can *possibly* be close enough to collide by comparing how close their x-positions are. If two entities do not share a close x-position, then they shouldn't be considered at all for the more expensive collision check. It's called the sweep and prune algorithm, and my implementation is pretty questionable so I won't showcase it here, but [this video](https://youtu.be/eED4bSkYCB8?t=941) does a great job illustrating it.
+To reduce the number of checks, we keep track of which entities can *possibly* be close enough to collide by comparing how close their x-positions are. If two entities do not share a close x-position, then they shouldn't be considered at all for the more expensive collision check. It's called the sweep and prune algorithm, and my implementation is pretty questionable so I won't showcase it here, but [this video (again)](https://youtu.be/eED4bSkYCB8?t=941) does a great job illustrating it.
 
 <hr>
 

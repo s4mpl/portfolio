@@ -63,8 +63,6 @@ Below I have provided the commands typed to produce the output in the screenshot
 /price diamond
 /sell diamond 200
 /sell diamond 2000 (Note: this will still sell as many as you have, up to this amount)
-[refill inventory]
-/sell diamond all
 ```
 
 <figure class='text-center'>

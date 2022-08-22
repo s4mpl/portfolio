@@ -22,12 +22,14 @@ npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch
 
 See [the installation guide](https://tailwindcss.com/docs/installation) for more information about how it works. Tailwind also provides great documentation with the ability to "quick search" for a page regarding the certain thing you're trying to do.
 
-To learn more about atomic CSS in general, I highly recommend reading [this post by Anthony Fu](https://antfu.me/posts/reimagine-atomic-css)&mdash;it's where I learned about it in the first place!
+> To learn more about atomic CSS in general, I highly recommend reading [this post by Anthony Fu](https://antfu.me/posts/reimagine-atomic-css)&mdash;it's where I learned about it in the first place!
 
 For my markdown parsing and codeblock syntax highlighting, I used Node.js's `npm` (Node package manager) to install [gray-matter](https://www.npmjs.com/package/gray-matter) for markdown-to-object conversion (splits content and metadata), [marked.js](https://marked.js.org/) for markdown-to-HTML parsing, and [highlight.js](https://highlightjs.org/) for syntax highlighting. The first two are also included in Ben Awad's tutorial linked above.
 
 ### A few details
 I love finding little details that can be customized. 
+
+<hr>
 
 When browsing through the Tailwind docs, I saw that I could edit the color of text selection:
 
@@ -52,6 +54,8 @@ This is also where I fixed the background color of the page (when zoomed too far
 
 While messing with selection color, I noticed that you could select the text in my navbar, which felt wrong when doing "select all" (`ctrl+A`), which I cared about for some reason. To combat this, I just had to add `select-none` to my navbar component.
 
+<hr>
+
 I also put in a lot of effort to support a fully styled light mode, despite its inferiority to dark mode, because I liked the "Projects / Posts" colors. I had to do this weird double-invert thing in order to flip the colors of the background image and text properly:
 
 ###### background-container.js
@@ -69,6 +73,8 @@ export default function BackgroundContainer({children}) {
 ```
 
 Also in that code snippet, my background color does this nice fade to dark / light as the page goes down since the image won't span the length of the page. Similar to how Steam profile backgrounds behave.
+
+<hr>
 
 ### Conclusion
 Thanks for reading through! I hope you find this collection of information helpful if you start a Next.js SSG project of your own.

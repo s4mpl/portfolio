@@ -3,7 +3,7 @@ title: "DynamicShop"
 description: "A Spigot-based Minecraft server plugin that features a global item shop with fluctuating prices based on supply and demand"
 date: "2021/12/12"
 written: "August 21, 2022"
-edited: "August 21, 2022"
+edited: "August 22, 2022"
 status: "Completed"
 haslink: true
 link: "https://github.com/tareqalyousef/DynamicShop"

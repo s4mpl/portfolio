@@ -26,6 +26,8 @@ See [the installation guide](https://tailwindcss.com/docs/installation) for more
 
 For my markdown parsing and codeblock syntax highlighting, I used Node.js's `npm` (Node package manager) to install [gray-matter](https://www.npmjs.com/package/gray-matter) for markdown-to-object conversion (splits content and metadata), [marked.js](https://marked.js.org/) for markdown-to-HTML parsing, and [highlight.js](https://highlightjs.org/) for syntax highlighting. The first two are also included in Ben Awad's tutorial linked above.
 
+Finally, another great thing about Next.js is that the creator, Vercel, makes it easy to deploy. They'll host your site for free, and you can buy a custom domain name (from somewhere like [namecheap.com](https://www.namecheap.com/)) and assign it. There's also Git repository integration, so your pushed changes can be deployed automatically.
+
 ### A few details
 I love finding little details that can be customized. 
 

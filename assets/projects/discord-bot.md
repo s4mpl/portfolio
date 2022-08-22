@@ -3,7 +3,7 @@ title: "s4mple Bot"
 description: "My own Discord bot with a bunch of random commands and features"
 date: "2017/12/30"
 written: "August 18, 2022"
-edited: "August 19, 2022"
+edited: "August 21, 2022"
 status: "Completed"
 haslink: false
 link: ""
@@ -11,7 +11,7 @@ link: ""
 ### Intro
 My very first personal project. How exciting!
 
-This was a Discord bot created in late 2017 using [Discord4J](https://discord4j.com/) 2.9.3, a Java wrapper for the official Discord Bot API. At the time, I was in 10th grade&mdash;halfway through my AP Computer Science A course with nothing but basic Java skills and a dream.
+This was a Discord bot created in late 2017 using [Discord4J](https://discord4j.com/) 2.9.3, a Java wrapper for the official Discord Bot API. At the time, I was in 10th grade&mdash;halfway through my "AP Computer Science A" course with nothing but basic Java skills and a dream.
 
 > **Note:** Sadly, this bot is no longer publicly available since I host it locally and have to constantly be running the program to keep it online.
 

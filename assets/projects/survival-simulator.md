@@ -131,7 +131,7 @@ This is because in the left two quadrants, the result of `y/(-x)` and `-y/(-x)` 
   <figcaption></figcaption>
 </figure>
 
-Luckily, since I had run into this issue many times with sensors in robotics, I knew there was a quick solution: add the proper angle offset where it "snaps back" in order to create a smooth transition around the circle. In this case, we can add 180 degrees to the angle if the relative x-position is negative.
+Luckily, since I had run into this issue many times with sensors in robotics, I knew there was a quick solution: add the proper angle offset where it "snaps back" in order to create a smooth transition around the circle. In this case, we can add 180 degrees to the angle if the relative x-position is negative:
 
 ###### Player.cpp
 ```cpp

@@ -17,7 +17,7 @@ const Index = ({projects, posts}) => {
         <Navbar/>
         <Post>
           <div className=''>
-            <p className='lead'>Here are some of my favorite personal projects that I&apos;ve written more about. If you&apos;re looking to do something similar, you might find them insightful:</p>
+            <p className='lead'>Here are some of my favorite personal projects that I&apos;ve written more about. If you&apos;re looking to do something similar, you might find it insightful:</p>
             {projects.sort(function(a, b) {return b.data.date.localeCompare(a.data.date)}).map(project => {
               let classList = ['project-entry'];
               switch(project.data.status) {

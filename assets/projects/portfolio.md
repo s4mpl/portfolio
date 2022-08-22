@@ -9,7 +9,7 @@ haslink: true
 link: "https://github.com/s4mpl/portfolio"
 ---
 ### Intro
-This is going to be a shorter post since this website speaks for itself, but I do want to share some general information and resources for those wanting to create a similar site. I also want to highlight some details that I learned were customizable while building my site.
+This is going to be a shorter post since this website speaks for itself, but I do want to share some general information and resources for those wanting to create something similar. I also want to highlight some details that I learned were customizable while building my site.
 
 ### Tools / technologies used
 I started this project with [a helpful tutorial from Ben Awad](https://www.youtube.com/watch?v=pY0vWYLDDco). The site utilizes Next.js's [static site generation (SSG)](https://nextjs.org/docs/basic-features/pages#static-generation-recommended) feature, which allows it to fetch posts from a content management system (CMS) and dynamically render HTML elements for each from just a markdown (`.md`) file. It's confusing, and I can't really explain how anything works, but Next.js basically makes things a lot easier and cleaner. I used to try creating websites with pure HTML and CSS, and I hated every bit of it, but I actually genuinely enjoyed putting this site together with Next.js once I got the ball rolling.

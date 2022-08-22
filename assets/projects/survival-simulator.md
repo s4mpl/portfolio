@@ -181,7 +181,7 @@ Here is the other weapon I got around to implementing. The name was inspired by 
   <figcaption></figcaption>
 </figure>
 
-Basically this works by finding the relative position vector between the bullet and the cursor and constantly sets the velocity vector to some multiple of that (it's 2.5x faster with the upgrade for quicker direction changes).
+Basically this works by finding the relative position vector between the bullet and the cursor and constantly sets the velocity vector to some multiple of that (it's 2.5x faster with the upgrade for quicker direction changes):
 
 ###### SmartBullet.cpp
 ```cpp

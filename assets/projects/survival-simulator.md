@@ -253,7 +253,7 @@ void Pistol::draw(sf::RenderWindow& window) {
 ```
 to override the default values or run additional code. This also meant each instance of a weapon could be created with whatever combination of upgrades simply by passing that unique `weaponUpgrades` value.
 
-For example: 15 -> 00...01111 -> (from right to left) **yes** increased ammo, **yes** laser sight, **yes** increased fire rate, **yes** increased reload speed, **no** burst fire.
+For example: 15 => 00...01111 => (from right to left) **yes** increased ammo, **yes** laser sight, **yes** increased fire rate, **yes** increased reload speed, **no** burst fire.
 
 <figure class='text-center'>
   <video width='' height='' class='mx-auto' muted controls>

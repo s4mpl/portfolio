@@ -95,7 +95,7 @@ To reduce the number of checks, we keep track of which entities can *possibly* b
 
 <hr>
 
-Here was an annoying problem: having the player's direction correctly following the mouse. Doesn't seem so bad, right? Every frame, just get the relative position vector from the player to the cursor, find the absolute angle (where "0°" is to the right), and set the player to face that way:
+Here was an annoying problem: having the player's direction correctly following the mouse. Doesn't seem so bad, right? Every frame, just get the relative position vector from the player to the cursor, find the absolute angle (where "0°" is to the right and "positive" is counter-clockwise), and set the player to face that way:
 
 <figure class='text-center'>
   <img src='/images/survival-simulator/survival-simulator-8.png' class='mx-auto'/>

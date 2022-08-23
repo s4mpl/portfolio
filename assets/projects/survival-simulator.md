@@ -139,7 +139,7 @@ This is where the problem lies&mdash;there can't be multiple values of `arctan(�
   <figcaption></figcaption>
 </figure>
 
-For this reason, mathematicians have agreed that the range (output) of the `arctan` function should **only** be between -90° and 90°, exclusive, which is why the rotation only worked on the right side (i.e., this is the interval on which `arctan(tan(θ)) = θ` is true). It's somewhat arbitrary because any period of 180° would also work, but this interval leaves a nice continuous curve right around the origin. Had they instead decided the range should be restricted between 0° and 180°, exclusive, the rotation would only work on the top half.
+For this reason, mathematicians have agreed that the range (output) of the `arctan` function should **only** be between -90° and 90°, exclusive, which is why the player rotation worked on just the right side (i.e., this is the interval on which `arctan(tan(θ)) = θ` is true). It's somewhat arbitrary because *any* period of 180° would also avoid overlap, but this interval leaves a nice continuous curve right around the origin. Had they instead decided the range should be restricted between 0° and 180°, exclusive, the player rotation would only work on the top half.
 
 Luckily, since I had run into this issue many times with sensors in robotics, I knew there was a simple solution: add the proper angle offset where it "snaps back" in order to create a smooth transition around the circle. In this case, we can add 180° to the output angle if the relative x-position is negative:
 

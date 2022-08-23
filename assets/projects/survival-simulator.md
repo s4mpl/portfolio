@@ -3,7 +3,7 @@ title: "Survival Simulator"
 description: "A top-down 2D shooter written in C++ using SFML and a physics engine made from scratch"
 date: "2021/07/19"
 written: "August 20, 2022"
-edited: "August 21, 2022"
+edited: "August 23, 2022"
 status: "Cancelled"
 haslink: true
 link: "https://github.com/s4mpl/Survival-Simulator"
@@ -95,7 +95,7 @@ To reduce the number of checks, we keep track of which entities can *possibly* b
 
 <hr>
 
-Here was an annoying problem: having the player's direction correctly following the mouse. Doesn't seem so bad, right? Every frame, just get the relative position vector from the player to the cursor, find the absolute angle (where "0" is to the right), and set the player to face that way:
+Here was an annoying problem: having the player's direction correctly following the mouse. Doesn't seem so bad, right? Every frame, just get the relative position vector from the player to the cursor, find the absolute angle (where "0°" is to the right), and set the player to face that way:
 
 <figure class='text-center'>
   <img src='/images/survival-simulator/survival-simulator-8.png' class='mx-auto'/>
@@ -124,14 +124,24 @@ However, that yields something like this:
   <figcaption>Yikes!</figcaption>
 </figure>
 
-This is because in the left two quadrants, the result of `y/(-x)` and `-y/(-x)` is indistinguishable from the right two quadrants' `-y/x` and `y/x`, respectively, so the result of the `arctan` is as if it were in the opposite quadrant. Also, mathematically, the `arctan` function is only defined on `(-pi/2, pi/2)` (the right side) for this reason so that there aren't multiple values of `arctan(x)` mapped to a single `x` (i.e., it wouldn't be a function) like this:
+This is because in the left two quadrants relative to the player, the result of `y/(-x)` and `-y/(-x)` is indistinguishable from the right two quadrants' `-y/x` and `y/x`, respectively, so the result of `atan` is as if it were in the opposite quadrant. The longer math explanation is coming up.
+
+Notice that the last step in the drawing above subtly suggests that `arctan(tan(θ)) = θ` without any restriction. This is a very incorrect statement. `tan` has multiple ways to get the same output (also referred to as not being ["one-to-one" or "injective"](https://en.wikipedia.org/wiki/Injective_function)), so when considering its inverse, `arctan`, there is loss of information.
+
+For example, if the player is looking directly right, at 0°, then `y = 0` and `x` can be any nonzero distance away&mdash;you're still looking directly right&mdash;thus the *tangent* of the angle the player is facing is `tan(0°) = y/x = 0/x = 0`. If the player is looking directly left, at 180° (or -180°), then `y = 0` and `x` is any nonzero *negative* distance away, so `tan(180°) = y/(-x) = 0/(-x) = 0`. Let's incorrectly assume `arctan(tan(θ)) = θ` simply because they are inverses. From this, we have proven that `0° = arctan(tan(0°)) = arctan(0) = arctan(tan(180°)) = 180°`, which is clearly false.
+
+> **Note:** It is actually true that `tan(arctan(θ)) = θ` in all cases, but not the other way around.
+
+This is where the problem lies&mdash;there can't be multiple values of `arctan(θ)` mapped to a single `θ` (i.e., it wouldn't be a function by definition) like this:
 
 <figure class='text-center'>
   <img src='/images/survival-simulator/survival-simulator-10.png' class='mx-auto'/>
   <figcaption></figcaption>
 </figure>
 
-Luckily, since I had run into this issue many times with sensors in robotics, I knew there was a quick solution: add the proper angle offset where it "snaps back" in order to create a smooth transition around the circle. In this case, we can add 180 degrees to the angle if the relative x-position is negative:
+For this reason, mathematicians have agreed that the range (output) of the `arctan` function should **only** be between -90° and 90°, exclusive, which is why the rotation only worked on the right side (i.e., this is the interval on which `arctan(tan(θ)) = θ` is true). It's somewhat arbitrary because any period of 180° would also work, but this interval leaves a nice continuous curve right around the origin. Had they instead decided the range should be restricted between 0° and 180°, exclusive, the rotation would only work on the top half.
+
+Luckily, since I had run into this issue many times with sensors in robotics, I knew there was a simple solution: add the proper angle offset where it "snaps back" in order to create a smooth transition around the circle. In this case, we can add 180° to the output angle if the relative x-position is negative:
 
 ###### Player.cpp
 ```cpp

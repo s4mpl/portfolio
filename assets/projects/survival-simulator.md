@@ -200,7 +200,7 @@ Basically this works by finding the relative position vector between the bullet 
 
 ###### SmartBullet.cpp
 ```cpp
-void SmartBullet::update(std::set<Entity*>* closeEntities) {
+void SmartBullet::update(std::set<Entity *> *closeEntities) {
     ...
     // Update velocity
     mousePos = sf::Mouse::getPosition(*window);
@@ -221,7 +221,7 @@ For something heavier like missiles, we can simulate the projectile's weight by 
 
 ###### SmartBullet.cpp
 ```cpp
-void SmartBullet::update(std::set<Entity*>* closeEntities) {
+void SmartBullet::update(std::set<Entity *> *closeEntities) {
     ...
     // Update acceleration (tracking mouse position)
     mousePos = sf::Mouse::getPosition(*window);

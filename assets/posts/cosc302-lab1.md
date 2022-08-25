@@ -30,8 +30,8 @@ I highly recommend you stay up to date with Piazza, but here I will reiterate th
 
 * Late policy:
   * 24h late: -25%
-  * 24h-48h late: -50%
-  * more than 48h late: **0**
+  * 24h to 48h late: -50%
+  * More than 48h late: **0**
   * You have two *grace days*.
 
 * **Don't cheat.** (please)

@@ -39,7 +39,7 @@ I highly recommend you stay up to date with Piazza, but here I will reiterate th
 <hr>
 
 ### Recommended coding environments and how to set them up
-There are a few options for accessing a suitable Unix-like environment on your machine, which ideally should be the only place you try to compile and run code, especially in courses later on and in life. My first semester, I tried doing a COSC 130 (230 now?) assignment on Windows and got a bug that took a whole group of TAs to figure out: whatever the bug was, it was because the size of a `long` on Windows is only 32 bits&mdash;the same as an `int`. Stupid, right?
+There are a few options for accessing a suitable Unix-like environment on your machine, which ideally should be the only place you try to compile and run code, especially in courses later on and in life. My first semester, I tried doing a COSC 130 (230 now?) assignment on Windows and got a bug that took a whole group of TAs to figure out: whatever the bug was, it was because the size of a `long` on Windows is only 32 bits&mdash;the same as an `int`. Stupid, right? (Though there is a [reason](https://qr.ae/pvb40J)).
 
 Anyway, some options are better than others, but you can decide what you like best. If you've taken classes here before and/or you're already using Linux, you probably don't need to read this section.
 

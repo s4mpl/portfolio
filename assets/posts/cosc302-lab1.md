@@ -114,6 +114,8 @@ scp -r Lab1 broachel@hydra5.eecs.utk.edu:~/cs302/
 #### tar
 `tar` is used to compress one or more files into a single file. [If you're curious about the flags or want more info](https://www.ibm.com/docs/en/aix/7.1?topic=t-tar-command).
 
+See [the lab submission guidelines](https://piazza.com/class/l66pusd8kg1ew/post/8) for a more complete set of notes, but here are some simple examples.
+
 > **WARNING:** The next two commands will overwrite any files in the current directory with the same name. Similar to `g++ -o`, make sure the arguments are in the correct order.
 
 Create a tar file named `tar_file_name.tar` containing files `file1`, `file2`, ..., `fileN`:

@@ -3,7 +3,7 @@ title: "COSC 302 Lab 1: Fuel"
 description: "Helpful resource for setting up your coding environment and understanding the lab writeup"
 date: "2022/09/06"
 written: "August 25, 2022"
-edited: "August 25, 2022"
+edited: "August 26, 2022"
 status: "TA Notes"
 haslink: true
 link: "https://utk.instructure.com/courses/154639/assignments/1283699"
@@ -106,6 +106,10 @@ Copy source code from Hydra to your local machine:
 ```
 scp broachel@hydra5.eecs.utk.edu:~/cs302/Lab1/FuelX.cpp .
 ```
+To copy entire directories, you can use `scp -r` ("r" for recursive)&mdash;this will overwrite the directory's contents if names are the same:
+```
+scp -r Lab1 broachel@hydra5.eecs.utk.edu:~/cs302/
+```
 
 #### tar
 `tar` is used to compress one or more files into a single file. [If you're curious about the flags or want more info](https://www.ibm.com/docs/en/aix/7.1?topic=t-tar-command).
@@ -204,6 +208,6 @@ argv[0]  argv[1]    argv[2]       argc = 3
 <hr>
 
 ### An overview of `std::map`
-Even if you think you're already familiar with C++ maps, I encourage you to give [this](http://utk.claranguyen.me/lab.php?id=cs140/fa20/lab8) a read-through anyway&mdash;you might still learn something. It was created by former TA Clara Nguyen, known for being one of the best CS TAs ever.
+Even if you think you're already familiar enough with C++ maps, I encourage you to give [this](http://utk.claranguyen.me/lab.php?id=cs140/fa20/lab8) a read-through anyway&mdash;you might still learn something. It was written by former TA Clara Nguyen, known for being one of the best CS TAs ever.
 
-Also, in general, I encourage you to pay attention to the return value of data structure operations (such as `insert()` above). While C++'s `std::stack` doesn't have this, usually stacks are implemented such that when you call `pop()`, the popped element is returned. Stuff like that. You never know what useful info you might be missing, and it might come in handy during a job interview. 
+Also, in general, I encourage you to pay attention to the return value of data structure operations (such as `insert()` above). While C++'s `std::stack` doesn't have this, usually stacks are implemented such that when you call `pop()`, the popped element is returned. Stuff like that. You never know what useful info you might be missing, and it might come in handy during a job interview.

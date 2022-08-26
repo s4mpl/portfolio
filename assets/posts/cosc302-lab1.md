@@ -29,7 +29,7 @@ I highly recommend you stay up to date with Piazza, but here I will reiterate th
 * If you have a concern about your most recent lab submission or your grade, make a **_private_** Piazza post to "Instructors" about it.
 
 * Late policy:
-  * 24h late: -25%
+  * Less than 24h late: -25%
   * 24h to 48h late: -50%
   * More than 48h late: **0**
   * You have two *grace days*.
@@ -41,9 +41,9 @@ I highly recommend you stay up to date with Piazza, but here I will reiterate th
 ### Recommended coding environments and how to set them up
 There are a few options for accessing a suitable Unix-like environment on your machine, which ideally should be the only place you try to compile and run code, especially in courses later on and in life. My first semester, I tried doing a COSC 130 (230 now?) assignment on Windows and got a bug that took a whole group of TAs to figure out: whatever the bug was, it was because the size of a `long` on Windows is only 32 bits&mdash;the same as an `int`. Stupid, right?
 
-Anyway, some options are better than others, but you can decide what you like best. If you're already using Linux, you probably don't need to read this section.
+Anyway, some options are better than others, but you can decide what you like best. If you've taken classes here before and/or you're already using Linux, you probably don't need to read this section.
 
-> **Note:** The step of testing on Hydra should *not* be disregarded no matter what.
+> **Note:** The step of testing on Hydra should *not* be disregarded, no matter what.
 
 If you have any questions or need help setting something up, don't hesitate to reach out to me or one of the other TAs or come to office hours.
 
@@ -70,7 +70,7 @@ By default, you can start a WSL shell using the `wsl` command and compile and te
 > **WARNING:** While it might be nice to have everything all in one place, you should still `scp` your tar file to Hydra to test your code JUST TO BE SURE!
 
 #### Option 3 (Not recommended): Vim directly on Hydra
-Arguably the worst one, but if you want to become a god at Vim like Dr. Plank or you like to suffer, you can do this. However, this *is* good for quick edits so you can compile and test again without `scp`, but for the bulk of the coding, I recommend one of the previous options.
+Arguably the worst one, but if you want to become a god at Vim like Dr. Plank or you like to suffer, you can do this. However, this *is* good for quick edits so you can compile and test again without `scp`, but for the bulk of the coding, I recommend one of the previous options. However, be sure to `scp` the code *back* or make the changes locally before you tar and submit.
 
 <hr>
 
@@ -78,13 +78,13 @@ Arguably the worst one, but if you want to become a god at Vim like Dr. Plank or
 As you might have noticed, for convenience, I'll provide you with a skeleton command you might use to create your tar file at the top of each one of these pages, but **you should understand how to use *all* of these commands on your own**.
 
 #### ssh
-`ssh` is used to securely remotely access a system such as the Hydra machines.
+`ssh` is used to securely remotely access a system, such as the Hydra machines.
 ```
 ssh [netid]@hydra[X].eecs.utk.edu
 ```
 <u>Example:</u>
 ```
-ssh broachel@hydr5.eecs.utk.edu
+ssh broachel@hydra5.eecs.utk.edu
 ```
 
 #### scp
@@ -98,11 +98,11 @@ scp [source] [destination]
 
 > **Note:** These commands are run on your local machine.
 
-Copy source code from my local machine to where I want it on Hydra:
+Copy source code from your local machine to where you want it on Hydra:
 ```
 scp FuelX.cpp broachel@hydra5.eecs.utk.edu:~/cs302/Lab1/
 ```
-Copy source code from Hydra to my local machine:
+Copy source code from Hydra to your local machine:
 ```
 scp broachel@hydra5.eecs.utk.edu:~/cs302/Lab1/FuelX.cpp .
 ```
@@ -110,7 +110,7 @@ scp broachel@hydra5.eecs.utk.edu:~/cs302/Lab1/FuelX.cpp .
 #### tar
 `tar` is used to compress one or more files into a single file. [If you're curious about the flags or want more info](https://www.ibm.com/docs/en/aix/7.1?topic=t-tar-command).
 
-> **WARNING:** The next two commands will overwrite any files in the destination with the same name. Similar to `g++ -o`, make sure the arguments are in the correct order.
+> **WARNING:** The next two commands will overwrite any files in the current directory with the same name. Similar to `g++ -o`, make sure the arguments are in the correct order.
 
 Create a tar file named `tar_file_name.tar` containing files `file1`, `file2`, ..., `fileN`:
 ```

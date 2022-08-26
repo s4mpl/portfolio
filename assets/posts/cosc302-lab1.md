@@ -69,7 +69,7 @@ By default, you can start a WSL shell using the `wsl` command and compile and te
 
 > **WARNING:** While it might be nice to have everything all in one place, you should still `scp` your tar file to Hydra to test your code JUST TO BE SURE!
 
-#### Option 3 (Not recommended): Vim directly on Hydra
+#### Option 3: Vim directly on Hydra
 Arguably the worst one, but if you want to become a god at Vim like Dr. Plank or you like to suffer, you *can* do this. However, this *is* actually good for quick edits so you can compile and test again without `scp`, but for the bulk of the coding, I recommend one of the previous options. However, be sure to `scp` the code *back* or make the changes locally before you tar and submit.
 
 <hr>

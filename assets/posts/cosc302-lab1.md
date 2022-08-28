@@ -141,7 +141,7 @@ tar -tf [tar_file_name.tar]
 ### Lab Notes
 There are four parts to this lab. Submit a tar file containing only the <u>*highest completed part*</u>.
 
-> **Note:** These are **Andrew's notes**, but I've copied and formatted them here. THIS IS NOT A REPLACEMENT FOR THE LAB WRITEUP&mdash;NOT ALL THE DETAILS ARE HERE.
+> **Note:** These are mainly **Andrew's notes** from the slides, but I've copied and adapted them here with some extra stuff. THIS IS NOT A REPLACEMENT FOR THE LAB WRITEUP&mdash;NOT ALL THE DETAILS ARE HERE. Use this as only a reference.
 
 #### Fuel1
 * struct `sale`: Holds information about each input line (objects of this type are stored in the vector `DB`)
@@ -234,7 +234,7 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
   * keys for map: bydate --> use DATE as key, bytype --> use TYPE as key
   * once the map is fully updated, go through it and print out the data
   * the map's value is a `sale_summary` struct that is initialized with a `sale` struct
-    * these are TWO different structs&mdash;be aware of that
+    * these are TWO *different* structs&mdash;be aware of that
 
 
 <hr>

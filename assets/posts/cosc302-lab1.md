@@ -3,7 +3,7 @@ title: "COSC 302 Lab 1: Fuel"
 description: "Helpful resource for setting up your coding environment and understanding the lab writeup"
 date: "2022/09/06"
 written: "August 25, 2022"
-edited: "August 26, 2022"
+edited: "August 28, 2022"
 status: "TA Notes"
 haslink: true
 link: "https://utk.instructure.com/courses/154639/assignments/1283699"
@@ -15,6 +15,9 @@ tar -cvf lab1_X.tar FuelX.cpp
 ```
 
 Due by **11:59pm Tuesday, September 6, 2022**
+
+<p>If you want to skip directly to the lab notes, <a href='#notes' target='_self')>click here</a>.</p>
+
 <hr>
 
 ### !!! Important information for all lab submissions !!!
@@ -133,7 +136,7 @@ Check contents of a tar file:
 tar -tf [tar_file_name.tar]
 ```
 
-<hr>
+<hr id='notes'>
 
 ### Lab Notes
 There are four parts to this lab. Submit a tar file containing only the <u>*highest completed part*</u>.
@@ -147,32 +150,55 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
   * `float` for quantity, unit price, and subtotal
 * overloaded input operator (`>>`): Takes each line and parses the data to create the struct for that sale
 * overloaded output operator (`<<`): Formats the output of the `sale` struct
+  * create a lookup table (array) that you can index with `int month` and `enum fuel_type`
+  ###### example.cpp
+  ```cpp
+    // A similar application of this concept
+    const char *alphabet_str[] = {
+      "apple", "banana", "c++", ..., "zebra"
+    };
 
-Example I/O:
-###### stdin
-```plaintext
-08-01-2021  Midgrade   24.72  4.690
-[date] [fueltype] [quantity] [unit price]
-```
-###### stdout
-```plaintext
-Aug  1, 2021 Midgrade    24.72 x 4.69 =  115.94 :    115.94
-[date] [fueltype] [quantity x unit price] = [subtotal] : [running total]
-```
+    // Remember: characters are numbers too
+    for(char c = 'a'; c <= 'z'; c++) {
+      // c-'a' efficiently maps each character to an index 0 - 26
+      // Think about the offset needed to align the first value with 0
+      cout << c << " is for " << alphabet_str[c-'a'] << endl;
+    }
+    ```
+    ###### stdout - `./example`
+    ``` plaintext
+    a is for apple
+    b is for banana
+    c is for c++
+    ...
+    z is for zebra
+    ```
 
-> **Note:** The width of each section is important (maybe?). If you can, just make sure the output matches Dr. Gregor's exactly using `setw()` or there may be a penalty!
+* Example I/O (including output field widths and justifications):
+  ###### stdin
+  ```plaintext
+  08-01-2021  Midgrade   24.72  4.690
+  [date] [fuel type] [quantity] [unit price]
+  ```
+  ###### stdout
+  ```plaintext
+  Aug  1, 2021 Midgrade    24.72 x 4.69 =  115.94 :    115.94
+  [month (3, left)] [day (2, right)], [year (4, right)] [fuel type (8, left)] [quantity (8, right)] x [unit price (4, right)] = [subtotal (7, right)] : [running total (9, right)]
+  ```
+
+> **Note:** The width and justification of each section is important. While there is no penalty, if you can, make sure the output matches Dr. Gregor's exactly using `setw()` or `printf()` to make grading easier for us!
 
 #### Fuel2
 * parse command-line arguments:
   * add parsing for `-inorder` flag and the file name that we will extract data from
   * `-inorder` maintains the order of the output as the order of the input
 
-Example `argv`/`argc`:
-```
-./Fuel2 -inorder fuel_data1.txt
-argv[0]  argv[1]    argv[2]       argc = 3
+* Example `argv`/`argc`:
+  ```
+  ./Fuel2 -inorder fuel_data1.txt
+  argv[0]  argv[1]    argv[2]       argc = 3
 
-```
+  ```
 
 * `print_details()`:
   * takes two iterators as a start and end, goes through the data structure (i.e., the vector `DB`), and prints out the data
@@ -192,7 +218,11 @@ argv[0]  argv[1]    argv[2]       argc = 3
   * quantity and subtotal `double` member variables
   * constructor
   * copy constructor
-  * overloaded += operator (takes in a sale object)
+  * overloaded `+=` operator (takes in a sale object)
+  * (optional) you may want to overload `<<` again with the following field widths
+    ```plaintext
+    [quantity (10, right)] x [unit price (4, right)] = [subtotal (8, right)]
+    ```
 * two functions:
   * `print_summary_bydate()`
   * `print_summary_bytype()`

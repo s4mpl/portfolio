@@ -186,7 +186,7 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
   [month (3, left)] [day (2, right)], [year (4, right)] [fuel type (8, left)] [quantity (8, right)] x [unit price (4, right)] = [subtotal (7, right)] : [running total (9, right)]
   ```
 
-> **Note:** The width and justification of each section is important. While there is no penalty, if you can, make sure the output matches Dr. Gregor's exactly using `setw()` or `printf()` to make grading easier for us!
+> **Note:** The width and justification of each section is important. While there is no penalty, if you can, make sure the output matches Dr. Gregor's exactly using `setw()` to make grading easier for us!
 
 #### Fuel2
 * parse command-line arguments:

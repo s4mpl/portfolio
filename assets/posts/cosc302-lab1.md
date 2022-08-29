@@ -102,11 +102,16 @@ mv [source] [destination]
 ```
 <u>Examples:</u>
 
-Moves `test1` into `cs302`:
+Moves `test1` into directory `cs302`:
 ```
 mv test1 cs302/test1
 ```
-Renames `test1` to `test2`:
+or
+```
+mv test1 cs302
+```
+
+Renames `test1` to `test2`  (if `test2` is not an existing directory):
 ```
 mv test1 test2
 ```
@@ -204,8 +209,33 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
 * struct `sale`: Holds information about each input line (objects of this type are stored in the vector `DB`)
   * `int` for month, day, and year
   * `enum` for fuel type
-  * `float` for quantity, unit price, and subtotal
+  * `double` for quantity, unit price, and subtotal
+    ###### Fuel1.cpp
+    ```cpp
+    struct sale {
+      int year;
+      int month;
+      int day;
+
+      fuel_type type;
+
+      double quantity;
+      double unit_price;
+
+      double subtotal;
+    };
+    ```
 * overloaded input operator (`>>`): Takes each line and parses the data to create the struct for that sale
+  * extract the dates from the first string by using `sscanf()`, something like  
+    ```cpp
+    string date;
+
+    istreamParameterVariableName >> date;
+
+    sscanf(date.c_str(), "%02d-%02d-%4d", &month, &day, &year);
+    ```
+  * check for EOF and return appropriately
+
 * overloaded output operator (`<<`): Formats the output of the `sale` struct
   * create a lookup table (array) that you can index with `int month` and `enum fuel_type`
   ###### example.cpp
@@ -231,6 +261,7 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
     z is for zebra
     ```
 
+* return type for input/output stream overloads is `istream &` and `ostream &`, respectively
 * Example I/O (including output field widths and justifications):
   ###### stdin
   ```plaintext
@@ -293,6 +324,50 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
   * the map's value is a `sale_summary` struct that is initialized with a `sale` struct
     * these are TWO *different* structs&mdash;be aware of that
 
+#### Using the test script (from Andrew on Piazza)
+I have provided a test script. For those who have had professors who provided a gradescript, this script is not giving you a grade. This is just a way to help automate testing. Please utilize it. 
+
+RUN THIS SCRIPT ON THE SCHOOL MACHINES! I had problems developing it on Windows, so just run it on the school machines for consistency!
+
+First un-tar the script in the directory you have set up. 
+
+The script will look for a specific file format: `Fuel#.cpp`, where `#` is the latest version you are working on. 
+
+The script fails to run on compile and runtime errors.
+
+Your script output on tests that are marked incorrect are in the `scriptDir/` given from the tar file. Look for the corresponding number to see your output difference.
+
+Your difference files for output that differs from the solution will be in `scriptDir/` listed as `diff#.txt`, where `#` is the corresponding failed test case. The solution output will be on the right side of that file. 
+
+The output format needs to match the solution output format. If you notice that the output lines are the same content-wise but it lists as incorrect, your formatting is incorrect somewhere. Below are the field widths for output for Parts 1-3:
+* month (3, left-justified) + " "
+* day (2, right-justified) + ", "
+* year (4, right-justified) + " "
+* fuel type (8, left-justified) + " "
+* quantity (8, right-justified) + " x "
+* unit price (4, right-justified) + " = "
+* subtotal (7, right-justified) + " : "
+* running total (9, right-justified)
+
+For Part 4, you have different field widths for the `-summary` flag.
+
+If you have `-bytype -summary`:
+* fuel type (12, left-justified) + " "
+* quantity (10, right-justified) + " x "
+* subtotal average (4, right-justified) + " = "
+* subtotal (8, right-justified) + " : "
+* running total (9, right-justified)
+
+For `-bydate -summary`:
+* month (3, left-justified) + " "
+* day (2, right-justified) + ", "
+* year (4, right-justified) + " "
+* quantity (10, right-justified) + " x "
+* fuel price (subtotal / quantity) (4, right-justified) + " = "
+* subtotal (8, right-justified) + " : "
+* running total (9, right-justified)
+
+If you are having problems, feel free to reach out and we can help you!
 
 <hr>
 

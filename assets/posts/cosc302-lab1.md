@@ -237,6 +237,7 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
   * check for EOF and return appropriately
 
 * overloaded output operator (`<<`): Formats the output of the `sale` struct
+  * do not use any form of `printf()` as it will round the decimal numbers when printing&mdash;write to the `ostream &` with `<<`, `left`, `right`, and `setw()` instead
   * create a lookup table (array) that you can index with `int month` and `enum fuel_type`
   ###### example.cpp
   ```cpp
@@ -274,7 +275,7 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
   [month (3, left)] [day (2, right)], [year (4, right)] [fuel type (8, left)] [quantity (8, right)] x [unit price (4, right)] = [subtotal (7, right)] : [running total (9, right)]
   ```
 
-> **Note:** The width and justification of each section is important. While there is no penalty, if you can, make sure the output matches Dr. Gregor's exactly using `setw()` to make grading easier for us!
+> **Note:** The width and justification of each section is important. While there is no penalty, if you can, make sure the output matches Dr. Gregor's / the test script's exactly using the provided information to make grading easier for us!
 
 #### Fuel2
 * parse command-line arguments:

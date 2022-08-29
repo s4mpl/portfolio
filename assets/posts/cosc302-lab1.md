@@ -121,6 +121,12 @@ mkdir [directory name]
 mkdir -p test1/test2/test3
 ```
 
+#### cat
+`cat` ("con**cat**enate") at its core simply views the contents of a file. There's a lot more you can do with it, but know this for now.
+```
+cat [file]
+```
+
 #### chmod
 `chmod` ("change mode") updates the read/write/execute permissions on a file or directory. Read more on the octal number [here](https://www.computerhope.com/unix/uchmod.htm), but you need to know `700` makes your file private.
 ```

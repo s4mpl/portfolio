@@ -262,7 +262,7 @@ There are four parts to this lab. Submit a tar file containing only the <u>*high
     z is for zebra
     ```
 
-* return type for input/output stream overloads is `istream &` and `ostream &`, respectively
+* return types for input/output stream overloads are `istream &` and `ostream &`, respectively
 * Example I/O (including output field widths and justifications):
   ###### stdin
   ```plaintext

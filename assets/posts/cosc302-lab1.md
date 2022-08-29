@@ -3,7 +3,7 @@ title: "COSC 302 Lab 1: Fuel"
 description: "Helpful resource for setting up your coding environment and understanding the lab writeup"
 date: "2022/09/06"
 written: "August 25, 2022"
-edited: "August 28, 2022"
+edited: "August 29, 2022"
 status: "TA Notes"
 haslink: true
 link: "https://utk.instructure.com/courses/154639/assignments/1283699"
@@ -79,6 +79,57 @@ Arguably the worst one, but if you want to become a god at Vim like Dr. Plank or
 
 ### Summary of the commands covered in lab:
 As you might have noticed, for convenience, I'll provide you with a skeleton command you might use to create your tar file at the top of each one of these pages, but **you should understand how to use *all* of these commands on your own**.
+
+> **Note:** Access the current directory or its parent directory using `.` and `..`, respectively.
+
+#### ls
+`ls` lists files in current directory or optional provided directory.
+```
+ls [(optional) directory]
+```
+
+#### cd
+`cd` changes current directory to provided directory.
+```
+cd [directory]
+```
+
+#### mv
+`mv` moves or renames a file to the destination path.
+> **WARNING:** This will overwrite any files in the destination with the same name.
+```
+mv [source] [destination]
+```
+<u>Examples:</u>
+
+Moves `test1` into `cs302`:
+```
+mv test1 cs302/test1
+```
+Renames `test1` to `test2`:
+```
+mv test1 test2
+```
+
+#### mkdir
+`mkdir` creates a directory (`-p` creates parent directories as needed).
+```
+mkdir [directory name]
+```
+<u>Example:</u> (in the current directory, creates folder `test1`, containing `test2`, containing `test3`)
+```
+mkdir -p test1/test2/test3
+```
+
+#### chmod
+`chmod` ("change mode") updates the read/write/execute permissions on a file or directory. Read more on the octal number [here](https://www.computerhope.com/unix/uchmod.htm), but you need to know `700` makes your file private.
+```
+chmod [octal permissions] [file or directory]
+```
+<u>Example:</u> (makes `cs302` directory private)
+```
+chmod 700 cs302
+```
 
 #### ssh
 `ssh` is used to securely remotely access a system, such as the Hydra machines.

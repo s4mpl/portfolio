@@ -1,6 +1,6 @@
 ---
-title: "Auto-Increment Syntax Parsing Turing Machine"
-description: "A class project in Turing machine design"
+title: "C++ Increment Syntax Parsing Turing Machine"
+description: "A class project in Turing machine design for COSC 312 – Algorithm Analysis and Automata"
 date: "2021/04/03"
 written: "August 20, 2022"
 edited: "August 20, 2022"

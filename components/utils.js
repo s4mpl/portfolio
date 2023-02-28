@@ -34,6 +34,22 @@ export const getPosts = () => {
     };
   });
 };
+
+export const get594Posts = () => {
+  const files = fs.readdirSync(path.join('assets', 'cosc594-blog'));
+
+  return files.map(fileName => {
+    const data = fs.readFileSync(path.join('assets', 'cosc594-blog', fileName)).toString();
+    const markdown = matter(data);
+    const contents = marked.parse(markdown.content);
+    return {
+      fileName: fileName,
+      slug: fileName.replace('.md', ''),
+      data: markdown.data,
+      contents
+    };
+  });
+};
  
 export const getProjectFromSlug = (slug) => {
   return getProjects().find(project => {
@@ -43,6 +59,12 @@ export const getProjectFromSlug = (slug) => {
 
 export const getPostFromSlug = (slug) => {
   return getPosts().find(post => {
+    return post.slug == slug;
+  });
+};
+
+export const get594PostFromSlug = (slug) => {
+  return get594Posts().find(post => {
     return post.slug == slug;
   });
 };

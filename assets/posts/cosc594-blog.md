@@ -9,7 +9,7 @@ haslink: false
 link: ""
 ---
 ### Intro
-This class has an interesting element of documentation of our larger-scale projects, but this is done through a more casual and fitting medium: a blog! This is being written with the ideas of reproducibility and refinement in mind&mdash;I lay out all the steps I took and make note of things I wish I could have done differently or changed for a better outcome, so if I ever did this again in the future (or if you wanted to follow along 🙂), the post would hopefully be beneficial. Failure is one of the best teachers.
+This class, a new upper-division special topics elective titled "Interactive Technologies in Human-Computer Interaction," has an interesting approach to documentation for our larger-scale projects. Instead of just writing reports, we get to do it through a more casual and fitting medium: a blog! I am writing with reproducibility and refinement in mind&mdash;I lay out all the steps I took and make note of things I wish I had done differently or could have known to do for a better outcome, so if I ever did this again in the future (or if you wanted to follow along 🙂), the post would hopefully be beneficial. Failure is one of the best teachers.
 
 > Fail early and fail often.
 

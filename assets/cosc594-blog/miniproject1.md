@@ -408,7 +408,7 @@ We fixed this by declaring our matrix with the `volatile` keyword. This forces C
 After further playtesting, we were 100% happy with the final result!
 
 <figure class='text-center'>
-  <iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/dTbhvNyuUoA' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
+  <iframe width='560px' height='315px' src='https://www.youtube-nocookie.com/embed/dTbhvNyuUoA' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
   <figcaption>A short demo video.</figcaption>
 </figure>
 

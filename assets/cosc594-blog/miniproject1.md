@@ -407,7 +407,10 @@ We fixed this by declaring our matrix with the `volatile` keyword. This forces C
 
 After further playtesting, we were 100% happy with the final result!
 
-<iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/dTbhvNyuUoA' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
+<figure class='text-center'>
+  <iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/dTbhvNyuUoA' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
+  <figcaption>A short demo video.</figcaption>
+</figure>
 
 We also finally stopped to think about what to call the game and found what we believe to be the perfect name: **_<< Bit Shift >>_**
 
@@ -497,8 +500,9 @@ void setup() {
 
 // The interrupt handler occurs once every millisecond
 // Each tick handles flashing a row for the interrupt period
-// Since we have 9 rows connected (8 red and 1 green) our time per frame is 9 milliseconds
-// Additionally, get touch input once per frame, and update the player position
+// Since we have 9 rows connected (8 red and 1 green), our time per frame is 9 milliseconds
+// Additionally, we get touch input every millisecond but update the player position
+// only once per frame
 ISR(TIMER0_COMPA_vect) {
   // Write each row, flashing it until the next interrupt
   uint8_t prevRow = (currentRow + 8) % 9;

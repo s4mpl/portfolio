@@ -113,7 +113,7 @@ ISR(TIMER0_COMPA_vect) {
 ---
 
 #### 02/27/2023
-I tested ways to get green LEDs to turn on with the current setup, and I noticed dimness in rows where multiple red LEDs were on at the same time but not green. After some questioning and discussion, we realized we needed to rewire the board such that the resistors went between the column pins and the shfit register rather than the row pins.
+I tested ways to get green LEDs to turn on with the current setup, and I noticed dimness in rows where multiple red LEDs were on at the same time but not green. After some questioning and discussion, we realized we needed to rewire the board such that the resistors went between the column pins and the shift register rather than the row pins and the Arduino, since the matrix is being repeatedly drawn row by row, so no more than one LED per *column* is on at a given instant.
 
 <figure class='text-center'>
   <img width='250px' height='250px' src='/images/cosc594-blog/miniproject1/02-27-green-test.jpg' class='mx-auto'/>

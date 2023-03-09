@@ -520,8 +520,8 @@ ISR(TIMER0_COMPA_vect) {
   isGameRunning &= !(matrixData[8] & matrixData[7]);
 
   // Player touch input
-  r1 = cs1.capacitiveSensor(5);
-  r2 = cs2.capacitiveSensor(5);
+  r1 = cs1.capacitiveSensor(10);
+  r2 = cs2.capacitiveSensor(10);
   updateGreenPos();
   if (isGameRunning) {
     // Only show the green dot if the game is running

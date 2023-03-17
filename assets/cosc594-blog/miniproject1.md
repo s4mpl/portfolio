@@ -285,7 +285,7 @@ CapacitiveSensor cs1 = CapacitiveSensor(SEND_PIN, RECEIVE_PIN_1);
 CapacitiveSensor cs2 = CapacitiveSensor(SEND_PIN, RECEIVE_PIN_2);
 ```
 
-In the `ISR`, we can read these values to update the player's position every millisecond. We have to be careful on how we implement this though&mdash;if we just move the player over one whenever a sensor is high, the green dot would very quickly go edge-to-edge. In our implmentation, we made it so that the player will only move on the *rising edge*. This way, the player will have to release and touch again in order to move another space. In order to limit the amount of time spent in the `ISR`, we only poll 2 times for the sensors. The more samples it takes, the more accurate and clear the readings are, but we got reliable enough feedback for now from only 2.
+In the `ISR`, we can read these values to update the player's position every millisecond. We have to be careful on how we implement this though&mdash;if we just move the player over one whenever a sensor is high, the green dot would very quickly go edge-to-edge. In our implementation, we made it so that the player will only move on the *rising edge*. This way, the player will have to release and touch again in order to move another space. In order to limit the amount of time spent in the `ISR`, we only poll 2 times for the sensors. The more samples it takes, the more accurate and clear the readings are, but we got reliable enough feedback for now from only 2.
 
 ```cpp
 ISR(TIMER0_COMPA_vect) {

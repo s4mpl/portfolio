@@ -3,7 +3,7 @@ title: "COSC 594 – Interactive Tech in HCI"
 description: "My blog for a class specializing in creating small gadgets that allow humans to interact with computers in novel ways"
 date: "2023/02/27"
 written: "February 27, 2023"
-edited: "February 27, 2023"
+edited: "March 21, 2023"
 status: "Ongoing"
 haslink: false
 link: ""
@@ -17,6 +17,6 @@ This class, a new upper-division special topics elective titled "Interactive Tec
 This blog has a post for one of the individual "micro projects," each of the "mini group projects" (working in pairs), and the final project:
 * μProject 2: "Bring Your Own Box"
 * <a href='./cosc594-blog/miniproject1' target='_self'>mgProject 1: "Interactive 8x8 Gaming Machine"</a>
-* mgProject 2: "Interactive Low-Tech"
+* <a href='./cosc594-blog/miniproject2' target='_self'>mgProject 2: "Interactive Input/Output with Low-Tech"</a>
 * mgProject 3: ???
 * Final Project: ???

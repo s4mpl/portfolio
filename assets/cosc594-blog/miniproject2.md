@@ -3,18 +3,18 @@ title: "mgProject 2: \"Interactive Input/Output with Low-Tech\""
 description: "Brief description here"
 date: "2023/03/30"
 written: "March 20, 2023"
-edited: "March 21, 2023"
+edited: "March 23, 2023"
 status: ""
 haslink: false
 link: ""
 ---
 ### Intro
-The goal of this project was to create ...
+The goal of this project was to create ... (will fill in when done)
 
 ---
 
 ### Reference Links
-1. [text](link)
+1. [(none yet)](link)
 
 ---
 
@@ -39,3 +39,17 @@ We explored more design ideas and potential features based around the shaking bo
   * Making use of the frequency of the shaking:
     * *Flappy Bird* clone game where the frequency of the shaking determines the player's upward velocity, display on LED matrix
     * Musical output where the frequency of the shaking determines the frequency of the pitch
+
+---
+
+#### 03/23/2023
+We pitched our main idea of the shaking box along with the two possible output modes we considered ("gravity-powered gyroscope" and "shaking sensor") to our design critique partner group and got some good feedback. They liked the idea and how there is significant movement involved, making it interactive. However, some of our functionality ideas were too game-focused, and we should keep it simple. That way, the product would function without a full game having to be developed again and displayed properly. All of us agreed upon the musical idea being a good output path to explore further, since it's a simple use of the output but gives us more time to refine and iterate on the system as a whole.
+
+As far as prototypes go, we were unable to get a hold of copper tape, so we could not explore some of the other options like paper circuits and start building prototypes in parallel. We *were* able to test the basic string-ball-copper system today with a multimeter though:
+
+<figure class='text-center'>
+  <video width='200px' height='200px' class='mx-auto' muted controls>
+    <source src='/images/cosc594-blog/miniproject2/03-23-string-test.mov' type='video/mp4'>
+  </video>
+  <figcaption>Completing the circuit, where the other end is held against the conductive string (out of frame).</figcaption>
+</figure>

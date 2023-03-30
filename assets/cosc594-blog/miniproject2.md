@@ -213,7 +213,7 @@ We decided to scrap this idea and go back to shake-based controls over gyro-base
 
 This was a good start, but it did not sound how we expected. We tuned it and also found a few related bugs so that now when it gets shaken, it starts going up a whole tone scale before quickly walking back down when the cube is no longer being shaken. We chose a whole tone scale because it has a nice, ethereal sound to it, and it was easy to implement (some base frequency multiplied by (⁶√2)*ⁿ*, where *n* is a natural number representing each note in the scale). More in the references at the top.
 
-After hearing it work, we were *incredibly* impressed with the results. The sound it produced felt quite natural. Take a listen for yourself!
+After hearing it work, we were *incredibly* pleased with the results. The sound it produced felt quite natural. Take a listen for yourself!
 
 <figure class='text-center'>
   <iframe width='100%' height='315px' src='https://www.youtube-nocookie.com/embed/zfXmGq-wvQ8' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>

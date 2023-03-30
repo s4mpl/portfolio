@@ -127,7 +127,7 @@ The copper tape finally arrived later in the afternoon, and Reed started putting
 
 <figure class='text-center'>
   <img width='500px' height='500px' src='/images/cosc594-blog/miniproject2/03-28-copper.jpg' class='mx-auto'/>
-  <figcaption>caption.</figcaption>
+  <figcaption>The pieces are now low-tech.</figcaption>
 </figure>
 
 Reed also wrote some initial code for testing the connection detection between the +5V source and the input pin, but we will wait until tomorrow to put everything together.

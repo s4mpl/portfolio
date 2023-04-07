@@ -1,6 +1,6 @@
 ---
 title: "mgProject 3: \"IMU, Motors, and such\""
-description: "Desc."
+description: "Desc. (fill in later)"
 date: "2023/03/30"
 written: "April 3, 2023"
 edited: "April 6, 2023"
@@ -9,7 +9,7 @@ haslink: false
 link: ""
 ---
 ### Intro
-The goal of this project was to ...
+The goal of this project was to use an IMU to digitize a physical interaction and translate it back into a real-world action with simple motors. Reed and I ... (fill in later)
 
 ### Reference Links
 1. [2D delta robot idea](https://www.hackster.io/RoboticsEveryDay/2-dimensional-delta-robot-with-servo-motor-arduino-478ddb)

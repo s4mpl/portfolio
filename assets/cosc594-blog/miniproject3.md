@@ -1,7 +1,7 @@
 ---
 title: "mgProject 3: \"IMU, Motors, and such\""
 description: "Desc. (fill in later)"
-date: "2023/03/30"
+date: "2023/04/13"
 written: "April 3, 2023"
 edited: "April 6, 2023"
 status: ""
@@ -39,7 +39,7 @@ We couldn't meet today, but we did communicate some more about what to do tomorr
 #### 04/05/2023
 We were able to make some great progress today!
 
-First, we tried building a mock-up of the drawing robot arms and tested it by holding down the ends of the arms with our fingers and moving the joints around. However, we discovered that it needed to be quite large to get a decent range of motion, so we discarded that idea and moved on to just trying to get IMU readings into our code. We did discover that these micro servos are quite weak, so in the future we should try building our prototype attachments out of paper, which is low-cost, light, and abundant.
+First, we tried building a mock-up of the drawing robot arms and tested it by holding down the ends of the arms with our fingers and moving the joints around. However, we discovered that it needed to be quite large to get a decent range of motion, so we discarded that idea and moved on to just trying to get IMU readings into our code. We did discover that these micro servos are pretty weak, so in the future we should try building our prototype attachments out of paper, which is low-cost, light, and abundant.
 
 <figure class='text-center'>
   <img width='500px' height='500px' src='/images/cosc594-blog/miniproject3/04-05-robot-prototype.jpg' class='mx-auto'/>

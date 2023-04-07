@@ -194,7 +194,7 @@ void loop() {
 }
 ```
 
-However, there are many minor issues with this in its current state. As long as you rotate the IMU at a "normal," consistent speed, it feels natural. Since I'm just using the rate of change, for slower movements the servo won't move as far even though it may have rotated the same amount. You can also still physically rotate out of bounds and that would cause the range of rotation angles that move the servo to shift. But overall, this was a good start and mainly just to help me generate some ideas and use cases. The code can be refined later.
+However, there are many minor issues with this in its current state. As long as you rotate the IMU at a "normal," consistent speed, it feels natural. Since I'm just using the rate of change directly, for slower movements the servo won't move as far even though it may have rotated the same amount. You can also still physically rotate out of bounds and that would cause the range of rotation angles that move the servo to shift. But overall, this was a good start and mainly just a quick and dirty solution to help me generate some ideas and use cases. The code can be refined later.
 
 Finally, back to Reed. He got a more complete prototype put together with far more sophisticated code (converting from DPS to degrees like you probably should):
 

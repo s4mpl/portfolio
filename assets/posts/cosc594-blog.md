@@ -18,5 +18,5 @@ This blog has a post for one of the individual "micro projects," each of the "mi
 * μProject 2: "Bring Your Own Box"
 * <a href='./cosc594-blog/miniproject1' target='_self'>mgProject 1: "Interactive 8x8 Gaming Machine"</a>
 * <a href='./cosc594-blog/miniproject2' target='_self'>mgProject 2: "Interactive Input/Output with Low-Tech"</a>
-* mgProject 3: ???
+* <a href='./cosc594-blog/miniproject3' target='_self'>mgProject 3: "IMU, Motors, and such"</a>
 * Final Project: ???

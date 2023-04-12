@@ -4,7 +4,7 @@ description: "My blog for a class specializing in creating small gadgets that al
 date: "2023/02/27"
 written: "February 27, 2023"
 edited: "March 21, 2023"
-status: "Ongoing"
+status: "In Progress"
 haslink: false
 link: ""
 ---

@@ -14,6 +14,8 @@ The goal of this project was to use an IMU to digitize a physical interaction an
 ### Reference Links
 1. [2D delta robot idea](https://www.hackster.io/RoboticsEveryDay/2-dimensional-delta-robot-with-servo-motor-arduino-478ddb)
 2. [IMU Arduino library](https://github.com/sparkfun/SparkFun_ICM-20948_ArduinoLibrary/)
+3. [Attitude and heading reference system (AHRS) Arduino library](https://github.com/arduino-libraries/MadgwickAHRS)
+4. [More about PID controllers](https://en.wikipedia.org/wiki/PID_controller)
 
 ---
 
@@ -263,3 +265,154 @@ void loop() {
   delay(15);
 }
 ```
+
+---
+
+#### 04/10/2023
+
+Unfortunately I got sick over the weekend, so we couldn't meet today. We briefly discussed next steps and agreed that the cup holder would be Plan A, and I continued trying to iterate on my idea (IMU attached to something not directly connected to the motor) as a backup while at home. I started considering things other than hands/gloves and found some inspiration: I considered attaching the IMU to the user's head to detect when they sneezed. Upon sneezing, the motors would rotate an arm towards the user, pulling a tissue out of a tissue box. However, I didn't really have the materials to prototype it, and I felt that it wasn't as interactive and fun as this project could be.
+
+---
+
+#### 04/11/2023
+Reed went to design critique today and demoed his prototype to our peer group. We got some good feedback that reinforced some of our existing plans and pointed us in a good direction to move forward with refining our design. I obtained some paper coffee cups from my apartment for Reed to replace the literal paper on the device. Now the cup holder snugly fits a variety of containers like another paper coffee cup, soda cans, and bottled water. However, due to the limited weight that the servo can support, they need to be filled with something light or a very small amount of liquid&mdash;further testing required.
+
+I talked to a friend in another group, and he told me about [this Arduino library](https://github.com/arduino-libraries/MadgwickAHRS) that filters the IMU data into nice roll, pitch, and yaw angles that&mdash;in theory&mdash;cause fewer problems and correctly accounts for holonomy, which basically means you can't trick the code into thinking the IMU is pointing the wrong way by physically translating it in weird ways without directly rotating it.
+
+While Reed worked on upgrading the prototype, I integrated this new library into the self-balancing code with the help of [this example](https://github.com/arduino-libraries/MadgwickAHRS/blob/master/examples/Visualize101/Visualize101.ino).
+
+This was the result of the first iteration:
+
+(Reed's video)
+
+```cpp
+#include "ICM_20948.h"
+#include <Servo.h>
+#include <MadgwickAHRS.h>
+
+#define SERVO_PIN 5
+
+ICM_20948_I2C imu;
+Servo servo;
+Madgwick filter;
+
+unsigned long microsPerReading, microsPrevious, microsNow;
+uint16_t servoAngle = 90;
+float roll, pitch, yaw;
+
+void setup() {
+  servo.attach(SERVO_PIN);
+  servo.write(servoAngle);
+
+  Serial.begin(115200);
+  while (!Serial) {}
+
+  Wire.begin();
+  Wire.setClock(400000);
+
+  while (1) {
+    imu.begin(Wire, 1);
+    Serial.print("IMU Status: ");
+    Serial.println(imu.statusString());
+    if (imu.status == ICM_20948_Stat_Ok) {
+      break;
+    }
+  }
+
+  filter.begin(200); // this many samples per second
+  // initialize variables to pace updates to correct rate
+  microsPerReading = 1000000 / 200;
+  microsPrevious = micros();
+}
+
+void loop() {
+  // check if it's time to read data and update the filter
+  microsNow = micros();
+  if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
+    imu.getAGMT();
+
+    filter.updateIMU(imu.gyrX(), imu.gyrY(), imu.gyrZ(), imu.accX(), imu.accY(), imu.accZ());
+
+    roll = filter.getRoll();
+    pitch = filter.getPitch();
+    yaw = filter.getYaw();
+
+    if (yaw > 180.0f) {
+      servoAngle += 2;
+    }
+    if (yaw < 180.0f) {
+      servoAngle -= 2;
+    }
+
+    servo.write(servoAngle);
+
+    Serial.print("Roll: ");
+    printFormattedFloat(roll, 3, 3);
+    Serial.print("  Pitch: ");
+    printFormattedFloat(pitch, 3, 3);
+    Serial.print("  Yaw: ");
+    printFormattedFloat(yaw, 3, 3);
+    Serial.println();
+
+    // increment previous time, so we keep proper pace
+    microsPrevious = microsPrevious + microsPerReading;
+  } else {
+    //Serial.println("No data");
+  }
+}
+```
+
+Not too bad, but clearly very shaky due to hard-coding a value to correct by, making it repeatedly overshoot for small errors. This is where [PID tuning](https://en.wikipedia.org/wiki/PID_controller) comes in. In this case, we tried using a simple "P loop," where we just use a <u>**p**</u>roportion of the current error value as feedback for the next iteration. Now our `loop()` function looks like this:
+
+```cpp
+void loop() {
+  // check if it's time to read data and update the filter
+  microsNow = micros();
+  if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
+    imu.getAGMT();
+
+    filter.updateIMU(imu.gyrX(), imu.gyrY(), imu.gyrZ(), imu.accX(), imu.accY(), imu.accZ());
+
+    roll = filter.getRoll();
+    pitch = filter.getPitch();
+    yaw = filter.getYaw();
+
+    error = yaw - 180.0f;
+    // Here, 0.05 is known as the "proportional term" or K_p
+    // It is one of the three parameters you can use to tune the system's behavior
+    // (K_i and K_d are technically 0 here)
+    servoAngle += 0.05 * error;
+    // don't let the angle continue to increase/decrease forever
+    servoAngle = constrain(servoAngle, 0, 180);
+
+    servo.write(servoAngle);
+
+    Serial.print("Roll: ");
+    printFormattedFloat(roll, 3, 3);
+    Serial.print("  Pitch: ");
+    printFormattedFloat(pitch, 3, 3);
+    Serial.print("  Yaw: ");
+    printFormattedFloat(yaw, 3, 3);
+    Serial.print("  Angle: ");
+    printFormattedFloat(servoAngle, 3, 3);
+    Serial.print("  Error: ");
+    printFormattedFloat(error, 3, 3);
+    Serial.println();
+
+    // increment previous time, so we keep proper pace
+    microsPrevious = microsPrevious + microsPerReading;
+  } else {
+    //Serial.println("No data");
+  }
+}
+```
+
+The code seemed pretty sound, but we got some interesting results when testing it:
+
+(Reed's video)
+
+If it gets "off," it seems to have a hard time correcting itself, but we haven't figured out what exactly causes this. I also tested it on my end and observed its behavior from the serial output. It's hard to tell what exactly is going on, but I noticed some yaw drift from the initial orientation (not moving the IMU), which surely isn't helping. I also got this, which didn't seem right either:
+
+(my video)
+
+Reed also seemed to have an issue where the yaw jumps out of nowhere while the IMU is still. We will investigate more during our meeting tomorrow.

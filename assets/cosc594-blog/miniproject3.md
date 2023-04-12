@@ -362,7 +362,7 @@ void loop() {
 }
 ```
 
-Not too bad, but clearly very shaky due to hard-coding a value to correct by, making it repeatedly overshoot for small errors. This is where [PID tuning](https://en.wikipedia.org/wiki/PID_controller) comes in. In this case, we tried using a simple "P loop," where we just use a <u>**p**</u>roportion of the current error value as feedback for the next iteration. Now our `loop()` function looks like this:
+Not too bad, but clearly very shaky due to hard-coding a value to correct by, making it repeatedly overshoot for small errors. This is where [PID tuning](https://en.wikipedia.org/wiki/PID_controller) comes in. In this case, we tried using a simple "P loop," where we just use a <u>**p**</u>roportion of the current error value as feedback for the next iteration. Smaller errors mean the motors will move much slower to to correct them to prevent overshooting, and the greater the error, the quicker the motor will try to counteract that "incorrect" movement. Now our `loop()` function looks like this:
 
 ```cpp
 void loop() {

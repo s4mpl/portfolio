@@ -58,7 +58,7 @@ For prototypes, we considered a device that uses a self-balancing motor by tapin
 #### 04/06/2023
 We did not meet today, but we each began building our own prototypes separately. Reed chose to bring our self-balancing cup holder idea to life, and I chose to do something with hand controls. Reed shared this base code with me (a simplified version of the tutorial code):
 
-```c
+```cpp
 #include "ICM_20948.h"
 
 ICM_20948_I2C myICM;
@@ -145,7 +145,7 @@ At first it was completely out of control when I was trying to add the raw chang
   <figcaption>High DPI gaming.</figcaption>
 </figure>
 
-```c
+```cpp
 void loop() {
   if (myICM.dataReady()) {
     myICM.getAGMT();
@@ -175,7 +175,7 @@ I added a deadzone so that sensor fluctuations and tiny movements wouldn't affec
   <figcaption></figcaption>
 </figure>
 
-```c
+```cpp
 void loop() {
   if (myICM.dataReady()) {
     myICM.getAGMT();
@@ -211,7 +211,7 @@ Finally, back to Reed. He got a more complete prototype put together with far mo
 > &#10077; What abomination have I brought upon this planet&#10078;  
 > \- Reed
 
-```c
+```cpp
 #include <Servo.h>
 #include "ICM_20948.h"
 
@@ -435,11 +435,11 @@ Reed also seemed to have an issue where the yaw jumps out of nowhere while the I
 ---
 
 #### 04/12/2023
-We spent a few hours debugging IMU readings and determined that the sensor just wasn't that great. There were all kinds of drifting values despite being left untouched, and we even tried swapping out IMUs. Despite this, we figured out a few ways to minimize the errors we were seeing in the behavior of our motor by using a couple of simple tricks (see the code below). After some tuning of the speed through the `K_p` value, we ended up with a good enough product, and it actually performs pretty consistently provided that the wearer doesn't rotate their arm in unnatural ways and tries to keep rotation within the axis that the one motor can correct against. Check it out:
+We spent a few hours debugging IMU readings and determined that the sensor just wasn't that great. There were all kinds of drifting values despite being left untouched, and we even tried swapping out IMUs. However, we figured out a few ways to minimize the errors we were seeing in the behavior of our motor by using a couple of simple tricks (see the code below). After some tuning of the speed through the `K_p` value, we ended up with a good enough product, and it actually performs pretty consistently provided that the wearer doesn't rotate their arm in unnatural ways and tries to keep rotation within the axis that the one motor can correct against. Check it out:
 
 <figure class='text-center'>
   <iframe width='100%' height='500px' src='https://www.youtube-nocookie.com/embed/WvlqQQe_DnU' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
-  <figcaption>Never spill your drink again while on the move!</figcaption>
+  <figcaption>Never spill your drink again while on the move with your Beverage Buddy!</figcaption>
 </figure>
 
 ---

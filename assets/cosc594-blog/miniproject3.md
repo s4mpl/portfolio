@@ -1,33 +1,34 @@
 ---
 title: "mgProject 3: \"IMU, Motors, and such\""
-description: "Desc. (fill in later)"
+description: "Beverage Buddy: A wearable cup holder that keeps your drink upright!"
 date: "2023/04/13"
 written: "April 3, 2023"
-edited: "April 6, 2023"
+edited: "April 12, 2023"
 status: ""
 haslink: false
 link: ""
 ---
 ### Intro
-The goal of this project was to use an IMU to digitize a physical interaction and translate it back into a real-world action with simple motors. Reed and I ... (fill in later)
+The goal of this project was to use an IMU to digitize a physical interaction and translate it back into a real-world action with simple motors. Reed and I decided to go down the path of creating something auto-stabilizing by having the motor and IMU move together to maintain a target orientation with a feedback loop. We wanted it to be wearable for more user interactivity, and we settled on a simple cup holder concept.
 
 ### Reference Links
 1. [2D delta robot idea](https://www.hackster.io/RoboticsEveryDay/2-dimensional-delta-robot-with-servo-motor-arduino-478ddb)
 2. [IMU Arduino library](https://github.com/sparkfun/SparkFun_ICM-20948_ArduinoLibrary/)
 3. [Attitude and heading reference system (AHRS) Arduino library](https://github.com/arduino-libraries/MadgwickAHRS)
 4. [More about PID controllers](https://en.wikipedia.org/wiki/PID_controller)
+5. [Demo video](https://www.youtube.com/watch?v=WvlqQQe_DnU)
 
 ---
 
 #### 04/03/2023
-Today, we brainstormed and came up with a bunch of ways we might use the IMU and the motors we have. Reed also mentioned that he has an old webcam we might be able to use, so we considered that as well:
+Today, we brainstormed and came up with a bunch of ways we might use the IMU and the motors that we have. Reed also mentioned that he has an old webcam we might be able to use, so we considered that as well:
 
 <figure class='text-center'>
   <img width='750px' height='750px' src='/images/cosc594-blog/miniproject3/04-03-brainstorm.jpg' class='mx-auto'/>
   <figcaption></figcaption>
 </figure>
 
-We were not immediately sure what direction to take this project, but we came up with a plan for next meeting: successfully get readings from the IMU, since that is crucial to any working prototype. Then we could begin to build some designs in parallel from there.
+We were not immediately sure what direction to take this project, but we came up with a plan for next meeting: successfully get readings from the IMU since that is crucial for any working prototype. Then, we could begin to build some designs in parallel from there.
 
 Later today, I came up with another idea: maybe there could be a camera on a hat on your head that would be recording like a third eye (visible on your phone somehow?), and when you tilted your head, the IMU would tell the motor rotate the camera in that direction.
 
@@ -269,7 +270,6 @@ void loop() {
 ---
 
 #### 04/10/2023
-
 Unfortunately I got sick over the weekend, so we couldn't meet today. We briefly discussed next steps and agreed that the cup holder would be Plan A, and I continued trying to iterate on my idea (IMU attached to something not directly connected to the motor) as a backup while at home. I started considering things other than hands/gloves and found some inspiration: I considered attaching the IMU to the user's head to detect when they sneezed. Upon sneezing, the motors would rotate an arm towards the user, pulling a tissue out of a tissue box. However, I didn't really have the materials to prototype it, and I felt that it wasn't as interactive and fun as this project could be.
 
 ---
@@ -283,7 +283,12 @@ While Reed worked on upgrading the prototype, I integrated this new library into
 
 This was the result of the first iteration:
 
-(Reed's video)
+<figure class='text-center'>
+  <video width='400px' height='400px' class='mx-auto' muted controls>
+    <source src='/images/cosc594-blog/miniproject3/04-11-initial-test.mp4' type='video/mp4'>
+  </video>
+  <figcaption>At least it's upright?</figcaption>
+</figure>
 
 ```cpp
 #include "ICM_20948.h"
@@ -409,10 +414,148 @@ void loop() {
 
 The code seemed pretty sound, but we got some interesting results when testing it:
 
-(Reed's video)
+<figure class='text-center'>
+  <video width='400px' height='400px' class='mx-auto' muted controls>
+    <source src='/images/cosc594-blog/miniproject3/04-11-second-test.mp4' type='video/mp4'>
+  </video>
+  <figcaption>Hmmm...</figcaption>
+</figure>
 
-If it gets "off," it seems to have a hard time correcting itself, but we haven't figured out what exactly causes this. I also tested it on my end and observed its behavior from the serial output. It's hard to tell what exactly is going on, but I noticed some yaw drift from the initial orientation (not moving the IMU), which surely isn't helping. I also got this, which didn't seem right either:
+If it gets "off," it seems to have a hard time correcting itself, but we haven't figured out what exactly causes this. I also tested it on my end and observed its behavior from the serial output. It's hard to tell what exactly is going on, but I noticed some yaw drift from the initial orientation (not moving the IMU), which surely isn't helping. At one point I got this, which didn't seem right either:
 
-(my video)
+<figure class='text-center'>
+  <video width='400px' height='400px' class='mx-auto' muted controls>
+    <source src='/images/cosc594-blog/miniproject3/04-11-other-test.mov' type='video/mp4'>
+  </video>
+  <figcaption></figcaption>
+</figure>
 
 Reed also seemed to have an issue where the yaw jumps out of nowhere while the IMU is still. We will investigate more during our meeting tomorrow.
+
+---
+
+#### 04/12/2023
+We spent a few hours debugging IMU readings and determined that the sensor just wasn't that great. There were all kinds of drifting values despite being left untouched, and we even tried swapping out IMUs. Despite this, we figured out a few ways to minimize the errors we were seeing in the behavior of our motor by using a couple of simple tricks (see the code below). After some tuning of the speed through the `K_p` value, we ended up with a good enough product, and it actually performs pretty consistently provided that the wearer doesn't rotate their arm in unnatural ways and tries to keep rotation within the axis that the one motor can correct against. Check it out:
+
+<figure class='text-center'>
+  <iframe width='100%' height='500px' src='https://www.youtube-nocookie.com/embed/WvlqQQe_DnU' class='mx-auto' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>
+  <figcaption>Never spill your drink again while on the move!</figcaption>
+</figure>
+
+---
+
+If you're interested, here's all the code. Enjoy!
+
+###### mgP3.ino
+```cpp
+#include "ICM_20948.h"
+#include <Servo.h>
+#include <MadgwickAHRS.h>
+
+#define SERVO_PIN 5
+
+ICM_20948_I2C imu;
+Servo servo;
+Madgwick filter;
+
+unsigned long microsPerReading, microsPrevious, microsNow;
+uint16_t servoAngle = 90;
+float roll, pitch, yaw, error, actual = 90;
+
+void setup() {
+  servo.attach(SERVO_PIN);
+  servo.write(servoAngle);
+  delay(1000);
+
+  Serial.begin(115200);
+  while (!Serial) {}
+
+  Wire.begin();
+  Wire.setClock(400000);
+
+  while (1) {
+    imu.begin(Wire, 1);
+    Serial.print("IMU Status: ");
+    Serial.println(imu.statusString());
+    if (imu.status == ICM_20948_Stat_Ok) {
+      break;
+    }
+  }
+
+  filter.begin(200); // This many samples per second
+  // Initialize variables to pace updates to correct rate
+  microsPerReading = 1000000 / 200;
+  microsPrevious = micros();
+}
+
+void loop() {
+  // Check if it's time to read data and update the filter
+  microsNow = micros();
+  if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
+    imu.getAGMT();
+
+    // Tell the filter to just ignore the accelerometer entirely,
+    // since it was causing readings to incorrectly drift
+    filter.updateIMU(imu.gyrX(), imu.gyrY(), imu.gyrZ(), 0, 0, 0);
+
+    roll = filter.getRoll();
+    pitch = filter.getPitch();
+    yaw = filter.getYaw();
+
+    error = yaw - 180.0f;
+    error = constrain(error, -10.0f, 10.0f); // Seems to keep it stable
+
+    // Here, 0.1 is known as the "proportional term" or K_p
+    // It is one of the three parameters you can use to tune the system's behavior
+    // (K_i and K_d are technically 0 here)
+    actual += 0.1 * error;
+    
+    // Don't let the angle continue to increase/decrease forever
+    actual = constrain(actual, 0.0f, 180.0f);
+    servoAngle = actual;
+
+    servo.write(servoAngle);
+
+    Serial.print("Roll: ");
+    printFormattedFloat(roll, 3, 3);
+    Serial.print("  Pitch: ");
+    printFormattedFloat(pitch, 3, 3);
+    Serial.print("  Yaw: ");
+    printFormattedFloat(yaw, 3, 3);
+    Serial.print("  Angle: ");
+    printFormattedFloat(actual, 3, 3);
+    Serial.print("  Error: ");
+    printFormattedFloat(error, 3, 3);
+    Serial.println();
+
+    // Increment previous time, so we keep proper pace
+    microsPrevious = microsPrevious + microsPerReading;
+  } else {
+    //Serial.println("No data");
+  }
+}
+
+void printFormattedFloat(float val, uint8_t leading, uint8_t decimals)
+{
+  float aval = abs(val);
+  if (val < 0)
+    Serial.print("-");
+  else
+    Serial.print(" ");
+  for (uint8_t indi = 0; indi < leading; indi++) {
+    uint32_t tenpow = 0;
+    if (indi < (leading - 1))
+      tenpow = 1;
+    for (uint8_t c = 0; c < (leading - 1 - indi); c++)
+      tenpow *= 10;
+    if (aval < tenpow)
+      Serial.print("0");
+    else
+      break;
+  }
+  if (val < 0)
+    Serial.print(-val, decimals);
+  else
+    Serial.print(val, decimals);
+}
+```

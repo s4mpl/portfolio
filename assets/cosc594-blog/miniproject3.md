@@ -324,14 +324,14 @@ void setup() {
     }
   }
 
-  filter.begin(200); // this many samples per second
-  // initialize variables to pace updates to correct rate
+  filter.begin(200); // This many samples per second
+  // Initialize variables to pace updates to correct rate
   microsPerReading = 1000000 / 200;
   microsPrevious = micros();
 }
 
 void loop() {
-  // check if it's time to read data and update the filter
+  // Check if it's time to read data and update the filter
   microsNow = micros();
   if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
     imu.getAGMT();
@@ -359,7 +359,7 @@ void loop() {
     printFormattedFloat(yaw, 3, 3);
     Serial.println();
 
-    // increment previous time, so we keep proper pace
+    // Increment previous time, so we keep proper pace
     microsPrevious = microsPrevious + microsPerReading;
   } else {
     //Serial.println("No data");
@@ -371,7 +371,7 @@ Not too bad, but clearly very shaky due to hard-coding a value to correct by, ma
 
 ```cpp
 void loop() {
-  // check if it's time to read data and update the filter
+  // Check if it's time to read data and update the filter
   microsNow = micros();
   if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
     imu.getAGMT();
@@ -387,7 +387,7 @@ void loop() {
     // It is one of the three parameters you can use to tune the system's behavior
     // (K_i and K_d are technically 0 here)
     servoAngle += 0.05 * error;
-    // don't let the angle continue to increase/decrease forever
+    // Don't let the angle continue to increase/decrease forever
     servoAngle = constrain(servoAngle, 0, 180);
 
     servo.write(servoAngle);
@@ -404,7 +404,7 @@ void loop() {
     printFormattedFloat(error, 3, 3);
     Serial.println();
 
-    // increment previous time, so we keep proper pace
+    // Increment previous time, so we keep proper pace
     microsPrevious = microsPrevious + microsPerReading;
   } else {
     //Serial.println("No data");

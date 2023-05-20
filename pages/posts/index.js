@@ -125,6 +125,8 @@ const Index = ({projects, posts}) => {
             <hr/>
             <p className='lead'>I also have some academic publications:</p>
             <a href='https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=LhyE6zwAAAAJ' target='_blank' rel='noreferrer'>My Google Scholar</a>
+            <br></br>
+            <a href='https://orcid.org/0000-0002-8008-8289' target='_blank' rel='noreferrer'>My ORCID</a>
           </div>
         </Post>
         <BackButton href='/'/>

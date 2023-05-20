@@ -3,8 +3,8 @@ title: "COSC 594 – Interactive Tech in HCI"
 description: "My blog for a class specializing in creating small gadgets that allow humans to interact with computers in novel ways"
 date: "2023/02/27"
 written: "February 27, 2023"
-edited: "March 21, 2023"
-status: "In Progress"
+edited: "May 20, 2023"
+status: "Completed"
 haslink: false
 link: ""
 ---
@@ -14,9 +14,9 @@ This class, a new upper-division special topics elective titled "Interactive Tec
 > &#10077; Fail early and fail often.&#10078;
 
 ### Projects
-This blog has a post for one of the individual "micro projects," each of the "mini group projects" (working in pairs), and the final project:
-* μProject 2: "Bring Your Own Box"
+This blog has a post for each of the "mini group projects" (working in pairs) and the final project:
+<!--* μProject 2: "Bring Your Own Box"-->
 * <a href='./cosc594-blog/miniproject1' target='_self'>mgProject 1: "Interactive 8x8 Gaming Machine"</a>
 * <a href='./cosc594-blog/miniproject2' target='_self'>mgProject 2: "Interactive Input/Output with Low-Tech"</a>
 * <a href='./cosc594-blog/miniproject3' target='_self'>mgProject 3: "IMU, Motors, and such"</a>
-* Final Project: ???
+* <a href='./cosc594-blog/finalproject' target='_self'>Final Project: GuardianLock</a>

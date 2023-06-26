@@ -74,7 +74,7 @@ export default function BackgroundContainer({children}) {
 }
 ```
 
-Also in that code snippet, my background color does this nice fade to dark / light as the page goes down since the image won't span the length of the page. Similar to how Steam profile backgrounds behave.
+Also in that code snippet, my background color does this nice fade to dark / light as the page goes down since the image won't span the length of the page&mdash;similar to how Steam profile backgrounds behave.
 
 <hr>
 

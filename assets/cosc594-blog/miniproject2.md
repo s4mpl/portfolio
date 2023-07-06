@@ -239,8 +239,7 @@ If you're interested, here's all the code. Enjoy!
 #define BASE_FREQ 400
 #define MAX_CHANGE 30
 
-void setup()
-{
+void setup() {
   Serial.begin(9600);
 
   // Initialize the pins we need -- 6 voltage dividers and 1 buzzer
@@ -258,8 +257,7 @@ bool touches[6] = { 0 };
 bool prevTouches[6] = { 0 };
 int change = 0;
 
-void loop()
-{
+void loop() {
   int r1, r2, r3, r4, r5, r6;
 
   // Read the voltage dividers

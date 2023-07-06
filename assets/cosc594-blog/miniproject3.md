@@ -65,23 +65,23 @@ ICM_20948_I2C myICM;
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial) {}
+  while(!Serial) {}
 
   Wire.begin();
   Wire.setClock(400000);
 
-  while (1) {
+  while(1) {
     myICM.begin(Wire, 1);
     Serial.print("IMU Status: ");
     Serial.println(myICM.statusString());
-    if (myICM.status == ICM_20948_Stat_Ok) {
+    if(myICM.status == ICM_20948_Stat_Ok) {
       break;
     }
   }
 }
 
 void loop() {
-  if (myICM.dataReady()) {
+  if(myICM.dataReady()) {
     myICM.getAGMT();
     Serial.print("Z: ");
     printFormattedFloat(myICM.gyrZ(), 3, 3);
@@ -94,22 +94,22 @@ void loop() {
 
 void printFormattedFloat(float val, uint8_t leading, uint8_t decimals) {
   float aval = abs(val);
-  if (val < 0)
+  if(val < 0)
     Serial.print("-");
   else
     Serial.print(" ");
-  for (uint8_t indi = 0; indi < leading; indi++) {
+  for(uint8_t indi = 0; indi < leading; indi++) {
     uint32_t tenpow = 0;
-    if (indi < (leading - 1))
+    if(indi < (leading - 1))
       tenpow = 1;
-    for (uint8_t c = 0; c < (leading - 1 - indi); c++)
+    for(uint8_t c = 0; c < (leading - 1 - indi); c++)
       tenpow *= 10;
-    if (aval < tenpow)
+    if(aval < tenpow)
       Serial.print("0");
     else
       break;
   }
-  if (val < 0)
+  if(val < 0)
     Serial.print(-val, decimals);
   else
     Serial.print(val, decimals);
@@ -147,7 +147,7 @@ At first it was completely out of control when I was trying to add the raw chang
 
 ```cpp
 void loop() {
-  if (myICM.dataReady()) {
+  if(myICM.dataReady()) {
     myICM.getAGMT();
     reading = myICM.gyrX();
     Serial.print("X: ");
@@ -177,7 +177,7 @@ I added a deadzone so that sensor fluctuations and tiny movements wouldn't affec
 
 ```cpp
 void loop() {
-  if (myICM.dataReady()) {
+  if(myICM.dataReady()) {
     myICM.getAGMT();
     reading = myICM.gyrX();
     Serial.print("X: ");
@@ -220,14 +220,14 @@ Servo servo;
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial) {}
+  while(!Serial) {}
   Wire.begin();
   Wire.setClock(400000);
-  while (1) {
+  while(1) {
     myICM.begin(Wire, 1);
     Serial.print("IMU Status: ");
     Serial.println(myICM.statusString());
-    if (myICM.status == ICM_20948_Stat_Ok) {
+    if(myICM.status == ICM_20948_Stat_Ok) {
       break;
     }
   }
@@ -241,7 +241,7 @@ float z_pos = 0.0f;
 int servo_angle = 90;
 
 void loop() {
-  if (myICM.dataReady()) {
+  if(myICM.dataReady()) {
     myICM.getAGMT();
     unsigned long currentTime = millis();
     Serial.print("Z: ");
@@ -251,10 +251,10 @@ void loop() {
 
     printFormattedFloat(z_pos, 4, 2);
 
-    if (z_pos > 2.0f) {
+    if(z_pos > 2.0f) {
       servo_angle -= 2;
     }
-    if (z_pos < -2.0f) {
+    if(z_pos < -2.0f) {
       servo_angle += 2;
     }
 
@@ -310,16 +310,16 @@ void setup() {
   servo.write(servoAngle);
 
   Serial.begin(115200);
-  while (!Serial) {}
+  while(!Serial) {}
 
   Wire.begin();
   Wire.setClock(400000);
 
-  while (1) {
+  while(1) {
     imu.begin(Wire, 1);
     Serial.print("IMU Status: ");
     Serial.println(imu.statusString());
-    if (imu.status == ICM_20948_Stat_Ok) {
+    if(imu.status == ICM_20948_Stat_Ok) {
       break;
     }
   }
@@ -333,7 +333,7 @@ void setup() {
 void loop() {
   // Check if it's time to read data and update the filter
   microsNow = micros();
-  if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
+  if(imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
     imu.getAGMT();
 
     filter.updateIMU(imu.gyrX(), imu.gyrY(), imu.gyrZ(), imu.accX(), imu.accY(), imu.accZ());
@@ -342,10 +342,10 @@ void loop() {
     pitch = filter.getPitch();
     yaw = filter.getYaw();
 
-    if (yaw > 180.0f) {
+    if(yaw > 180.0f) {
       servoAngle += 2;
     }
-    if (yaw < 180.0f) {
+    if(yaw < 180.0f) {
       servoAngle -= 2;
     }
 
@@ -373,7 +373,7 @@ Not too bad, but clearly very shaky due to hard-coding a value to correct by, ma
 void loop() {
   // Check if it's time to read data and update the filter
   microsNow = micros();
-  if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
+  if(imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
     imu.getAGMT();
 
     filter.updateIMU(imu.gyrX(), imu.gyrY(), imu.gyrZ(), imu.accX(), imu.accY(), imu.accZ());
@@ -468,16 +468,16 @@ void setup() {
   delay(1000);
 
   Serial.begin(115200);
-  while (!Serial) {}
+  while(!Serial) {}
 
   Wire.begin();
   Wire.setClock(400000);
 
-  while (1) {
+  while(1) {
     imu.begin(Wire, 1);
     Serial.print("IMU Status: ");
     Serial.println(imu.statusString());
-    if (imu.status == ICM_20948_Stat_Ok) {
+    if(imu.status == ICM_20948_Stat_Ok) {
       break;
     }
   }
@@ -491,7 +491,7 @@ void setup() {
 void loop() {
   // Check if it's time to read data and update the filter
   microsNow = micros();
-  if (imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
+  if(imu.dataReady() && microsNow - microsPrevious >= microsPerReading) {
     imu.getAGMT();
 
     // Tell the filter to just ignore the accelerometer entirely,
@@ -535,25 +535,24 @@ void loop() {
   }
 }
 
-void printFormattedFloat(float val, uint8_t leading, uint8_t decimals)
-{
+void printFormattedFloat(float val, uint8_t leading, uint8_t decimals) {
   float aval = abs(val);
-  if (val < 0)
+  if(val < 0)
     Serial.print("-");
   else
     Serial.print(" ");
-  for (uint8_t indi = 0; indi < leading; indi++) {
+  for(uint8_t indi = 0; indi < leading; indi++) {
     uint32_t tenpow = 0;
-    if (indi < (leading - 1))
+    if(indi < (leading - 1))
       tenpow = 1;
     for (uint8_t c = 0; c < (leading - 1 - indi); c++)
       tenpow *= 10;
-    if (aval < tenpow)
+    if(aval < tenpow)
       Serial.print("0");
     else
       break;
   }
-  if (val < 0)
+  if(val < 0)
     Serial.print(-val, decimals);
   else
     Serial.print(val, decimals);

@@ -1,6 +1,6 @@
 ---
 title: "Evolving Neural Networks with NEAT to Control an X-Drive Robot"
-description: "Final project for COSC 527 – Biologically Inspired Computation: a novel application of genetic algorithms to robotics"
+description: "Final project for COSC 527 – Biologically-Inspired Computation: a novel application of genetic algorithms to robotics"
 date: "2023/05/11"
 written: "May 20, 2023"
 edited: "May 20, 2023"

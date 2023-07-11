@@ -8,7 +8,6 @@ status: "Completed"
 haslink: false
 link: ""
 ---
-
 This project was done in collaboration with Drew Friend, a good friend and fellow robotics enthusiast. Our work is in the form of a [poster](/Bio-Inspired_Comp_Final_Poster.pdf) and [paper](/COSC_527____Final_Project.pdf).
 
-Our code to train models and interactive simulation of the trained models used for our demo can be found [here](https://github.com/s4mpl/Bio-Inspired_Final_Project).
+Our code to train models and the interactive simulation of the trained models used for our demo can be found [here](https://github.com/s4mpl/Bio-Inspired_Final_Project).

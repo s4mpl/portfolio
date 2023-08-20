@@ -143,7 +143,7 @@ For this reason, mathematicians have agreed that the range (output) of the `arct
 
 <figure class='text-center'>
   <img src='/images/survival-simulator/survival-simulator-12.png' class='mx-auto'/>
-  <figcaption>arctan in an alternate universe</figcaption>
+  <figcaption>arctan in an alternate universe.</figcaption>
 </figure>
 
 Luckily, since I had run into this issue many times with sensors in robotics, I knew there was a simple solution: add the proper angle offset where it "snaps back" in order to create a smooth transition around the circle. In this case, we can add 180° to the output angle if the relative x-position is negative:

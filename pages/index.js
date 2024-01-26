@@ -17,7 +17,7 @@ const Home = () => {
             <p className='pb-8 sm:pb-4'>Hello! My name is</p>
             <p className='text-5xl sm:text-7xl'>Brandan Roachell</p>
             <p className='py-8 pl-2 sm:pl-4 sm:py-4'>
-              I&apos;m a computer science and math student with a passion for learning and making cool things.
+              I&apos;m most interested in lower-level systems programming using modern C++, and I additionally have a background in backend software engineering, robotics, and data science.
             </p>
           </div>
           <div>

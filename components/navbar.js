@@ -23,7 +23,7 @@ export default function Navbar() {
                 Brandan
               </h1>
               <p className='text-base pr-4 font-light text-gray-600 dark:text-gray-300'>
-                Software, Robotics, Data
+                Home
               </p>
             </a>
           </Link>

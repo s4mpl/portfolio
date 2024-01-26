@@ -6,7 +6,7 @@ written: "August 21, 2022"
 edited: "August 22, 2022"
 status: "Completed"
 haslink: true
-link: "https://github.com/tareqalyousef/DynamicShop"
+link: "https://github.com/s4mpl/DynamicShop"
 ---
 ### Intro 
 This is a server plugin for the game [Minecraft](https://en.wikipedia.org/wiki/Minecraft) (Java edition) that allows players to interact with a global item market through chat commands. Every item has a buy and sell price, every player has a balance, and there's a leaderboard showing all current player balances&mdash;though these features are pretty standard. The twist is that every item has a configurable exponential curve that its price follows based on how many have been bought and sold, creating an economy based on supply and demand. Players can also view the market's highest and lowest percent changes in price to see if there's an opportunity to make money or to avoid buying certain artificially scarce items.

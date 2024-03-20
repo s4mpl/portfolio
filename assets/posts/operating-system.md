@@ -3,14 +3,14 @@ title: "Custom Operating System"
 description: "A course-long project for COSC 562 – Operating Systems: Design & Impementation"
 date: "2023/12/11"
 written: "December 17, 2023"
-edited: "December 17, 2023"
+edited: "March 20, 2024"
 status: "Completed"
 haslink: true
 link: "https://github.com/s4mpl/cs562"
 ---
 > **DISCLAIMER:** This was a five-person group project, and it certainly would not have gotten done without the respectable efforts of most of my teammates. However, I would like to take credit for a majority of the work aside from the starred bullet points below. :-)
 
-This operating system runs in QEMU and targets the RISC-V architecture. It is written in C and boasts the following features:
+This operating system runs in QEMU and targets the RISC-V architecture. It is mostly written in C (some assembly required) and boasts the following features:
 * page-grained physical memory allocation
 * RISC-V Sv39 MMU (39-bit virtual addresses, 56-bit physical addresses)
   * separate address spaces for the kernel heap and each process' stack and heap
@@ -20,12 +20,14 @@ This operating system runs in QEMU and targets the RISC-V architecture. It is wr
   * keyboard input*
   * tablet input
   * block devices (to mount `.dsk` files to)
-  * GPU (drawing rectangles, circles, and strings from a bitmap font)
+  * GPU (for drawing rectangles, circles, and strings from a bitmap font)
 * Minix 3 file system*
 * processes and round-robin scheduling*
 * runnable ELF files loadable from the file system
 * support for user space applications, including system calls
   * currently runs a primitive version of MS Paint that allows for drawing with a fixed set of colors and sizes, saving a selection of the screen as a PPM image, and pasting an existing PPM image from the file system
+
+Now, this is hardly cutting-edge technology, but I think it is still an accomplishment to be proud of, and I've gained a high level of respect for those who work on actual operating systems. To take a step back and look at the final result (albeit imperfect) knowing just how much learning, planning, and debugging went into it is a really good feeling&mdash;a satisfying payoff.
 
 The `README.md` file included in the [repository](https://github.com/s4mpl/cs562) is a journal of the project's progress and highlights most of the major bugs and challenges we overcame. I don't have access to the original commit history, so unfortunately that is gone forever.
 

@@ -16,7 +16,7 @@ tar -cvf lab1_X.tar FuelX.cpp
 
 Due by **11:59pm Tuesday, September 6, 2022**
 
-<p>If you want to skip directly to the lab notes, <a href='#notes' target='_self')>click here</a>.</p>
+<p>If you want to skip directly to the lab notes, <a href='#notes' target='_self'>click here</a>.</p>
 
 <hr>
 

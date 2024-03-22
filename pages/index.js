@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Navbar from '../components/navbar';
 import BackgroundContainer from '../components/background-container';
 import Head from 'next/head';

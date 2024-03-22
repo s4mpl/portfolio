@@ -42,9 +42,7 @@ const Index = ({projects, posts}) => {
                     <div className='flex flex-row flex-1'>
                       <div className='basis-3/4 mr-6'>
                         <Link href={'/posts/' + project.slug}>
-                          <a>
-                            {project.data.title} <span style={{color: 'var(--tw-prose-body)'}}>({project.data.date})</span>
-                          </a>
+                          {project.data.title} <span style={{color: 'var(--tw-prose-body)'}}>({project.data.date})</span>
                         </Link>
                       </div>
                       <div className='text-right basis-1/4'>
@@ -95,9 +93,7 @@ const Index = ({projects, posts}) => {
                     <div className='flex flex-row flex-1'>
                       <div className='basis-3/4 mr-6'>
                         <Link href={'/posts/' + project.slug}>
-                          <a>
-                            {project.data.title} <span style={{color: 'var(--tw-prose-body)'}}>({project.data.date})</span>
-                          </a>
+                          {project.data.title} <span style={{color: 'var(--tw-prose-body)'}}>({project.data.date})</span>
                         </Link>
                       </div>
                       <div className='text-right basis-1/4'>

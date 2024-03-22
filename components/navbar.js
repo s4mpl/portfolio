@@ -17,7 +17,7 @@ export default function Navbar() {
     <div className='sticky top-0 z-50 mx-auto px-4 py-6 bg-white dark:bg-black' style={{fontFamily: "Source Sans Pro"}}>
       <div className='select-none flex md:flex-row justify-around items-center'>
         <div className='flex flex-col'>
-          <Link href='/'>
+          <Link legacyBehavior href='/'>
             <a>
               <h1 className='font-semibold text-xl dark:text-gray-100'>
                 Brandan
@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
 
         <div className='space-x-12 hidden md:block'>
-          <Link href='/about'>
+          <Link legacyBehavior href='/about'>
             <a
               className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
                 router.asPath === '/about'
@@ -56,7 +56,7 @@ export default function Navbar() {
               )}
             </a>
           </Link>
-          <Link href='/posts'>
+          <Link legacyBehavior href='/posts'>
             <a
               className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
                 router.asPath === '/posts'
@@ -157,7 +157,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className='space-x-8 block md:hidden mt-4'>
-        <Link href='/about'>
+        <Link legacyBehavior href='/about'>
           <a
             className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
               router.asPath === '/about'
@@ -183,35 +183,35 @@ export default function Navbar() {
             )}
           </a>
         </Link>
-        <Link href='/posts'>
-            <a
-              className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
-                router.asPath === '/posts'
-                  ? 'text-gray-800 font-bold dark:text-gray-200'
-                  : 'text-gray-600 dark:text-gray-300 font-normal '
-              }`}
-            >
-              Projects / Posts{' '}
-              {router.asPath === '/posts' && (
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='16'
-                  height='16'
-                  className='inline-block h-3 w-3'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z'
-                  />
-                </svg>
-              )}
-            </a>
-          </Link>
-          <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank' rel='noreferrer'>
-            Resume
+        <Link legacyBehavior href='/posts'>
+          <a
+            className={`text-base hover:text-gray-900 hover:dark:text-gray-100 ${
+              router.asPath === '/posts'
+                ? 'text-gray-800 font-bold dark:text-gray-200'
+                : 'text-gray-600 dark:text-gray-300 font-normal '
+            }`}
+          >
+            Projects / Posts{' '}
+            {router.asPath === '/posts' && (
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='16'
+                height='16'
+                className='inline-block h-3 w-3'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+              >
+                <path
+                  fillRule='evenodd'
+                  d='M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z'
+                />
+              </svg>
+            )}
           </a>
+        </Link>
+        <a href='/Brandan_Roachell_Resume.pdf' className={`text-base text-gray-600 dark:text-gray-300 font-normal hover:text-gray-900 hover:dark:text-gray-100`} target='_blank' rel='noreferrer'>
+          Resume
+        </a>
       </div>
     </div>
   );

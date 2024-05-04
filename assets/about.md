@@ -10,4 +10,4 @@ I also have valuable industry experience as a software engineer from my Summer 2
 
 In my free time, I like to practice classical piano ([one of my current favorites](https://www.youtube.com/watch?v=cxlf-ZmE8JI)) and, of course, play video games.
 
-If you'd like to get in touch, please feel free to connect with me on LinkedIn or email me at **broachel@vols.utk.edu**.
+If you'd like to get in touch, please feel free to connect with me on LinkedIn or email me at **brandanroachell@gmail.com**.
